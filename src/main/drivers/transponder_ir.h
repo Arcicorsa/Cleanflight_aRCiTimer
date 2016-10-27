@@ -17,6 +17,16 @@
 
 #pragma once
 
+// aRCiTimer
+#define TRANSPONDER_BITS_PER_BYTE_ARCITIMER 8 // start + 8 data + stop (pokud uberes tak na vystupu nebude cely bajt)
+#define TRANSPONDER_DATA_LENGTH_ARCITIMER 9
+#define TRANSPONDER_TOGGLES_PER_BIT_ARCITIMER 4 //11 tiknutí nosne na bit (kolik period bude v 1)
+#define TRANSPONDER_GAP_TOGGLES_ARCITIMER 0 
+#define TRANSPONDER_TOGGLES_ARCITIMER (TRANSPONDER_TOGGLES_PER_BIT_ARCITIMER + TRANSPONDER_GAP_TOGGLES_ARCITIMER)
+
+#define TRANSPONDER_DMA_BUFFER_SIZE_ARCITIMER 155 * TRANSPONDER_TOGGLES_PER_BIT_ARCITIMER
+
+// I-LAP
 #define TRANSPONDER_BITS_PER_BYTE 10 // start + 8 data + stop
 #define TRANSPONDER_DATA_LENGTH 6
 #define TRANSPONDER_TOGGLES_PER_BIT 11
@@ -25,8 +35,11 @@
 
 #define TRANSPONDER_DMA_BUFFER_SIZE ((TRANSPONDER_TOGGLES_PER_BIT + 1) * TRANSPONDER_BITS_PER_BYTE * TRANSPONDER_DATA_LENGTH)
 
-#define BIT_TOGGLE_1 78 // (156 / 2)
-#define BIT_TOGGLE_0 0
+
+
+// BOTH
+#define BIT_TOGGLE_1 78 // (156 / 2) (delka mezery)
+#define BIT_TOGGLE_0 0               
 
 void transponderIrInit(void);
 void transponderIrDisable(void);
@@ -41,5 +54,8 @@ void transponderIrTransmit(void);
 
 bool isTransponderIrReady(void);
 
+
+extern uint8_t transponderIrDMABuffer1[TRANSPONDER_DMA_BUFFER_SIZE_ARCITIMER];
 extern uint8_t transponderIrDMABuffer[TRANSPONDER_DMA_BUFFER_SIZE];
 extern volatile uint8_t transponderIrDataTransferInProgress;
+extern uint8_t transponder_tipe;

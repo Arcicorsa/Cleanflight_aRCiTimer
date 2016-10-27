@@ -1,0 +1,4547 @@
+[33mcommit b5ceab889e22dcdc19bc0914cf3805fe78df9545[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Oct 24 18:17:52 2016 +0200
+
+    Increase timeout for I2C transter.
+    BMP280 is reading 24 bytes as a single I2C transaction and hits the
+    timeout which causes the i2c driver to get stuck on sending START when
+    doing the next transaction.
+    
+    credit to @digitalentity / 61b494d795731cd66c0e22b39b1f528161e794a0
+
+[33mcommit 75924ca4491490c2703d14ec9a9965574a4c865c[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Oct 23 14:02:51 2016 +0200
+
+    Improve legibility of RSSI/TX icon.
+
+[33mcommit a2d7924f3ce60cacf6958b70ab927ceaaf1e6d85[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Oct 23 02:06:18 2016 +0200
+
+    Fix font version and indentation.
+
+[33mcommit 43d1c33df45264b85922c9939f64545f9cbdf134[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Oct 23 00:48:54 2016 +0200
+
+    Update default layout.
+
+[33mcommit 5a87028e931b4d8482452e86cfa1721981cb4db9[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Oct 23 00:48:30 2016 +0200
+
+    Update some OSD element formatting.
+
+[33mcommit f7a3b57836d0785bc00dfbe856a306b6044345d3[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Oct 23 00:47:52 2016 +0200
+
+    Update font.
+
+[33mcommit b8db3cd79a66c6bb3524215337f40e6380611879[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Oct 22 21:37:31 2016 +0200
+
+    Replace 5v/125 power symbols.
+
+[33mcommit 4604de2ac0c9e55ed8c623e7a1a13ba8faeae60d[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Oct 22 21:23:53 2016 +0200
+
+    Update OSD elements to use new font symbols to reduce clutter.
+
+[33mcommit 40879ebbbfab0bb7becf1a9bc21ff479aae54515[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Oct 22 16:10:11 2016 +0200
+
+    Add some extra characters and symbols to the OSD font.
+
+[33mcommit 5cec66efb26cf88378f783340e285b97b4533c52[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Oct 22 13:37:59 2016 +0200
+
+    Tweak some OSD alignments.
+
+[33mcommit bd61cdc5d645af1b10b46d04d73dfcdf952a664a[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Fri Oct 21 16:25:30 2016 +0200
+
+    Fix missing initialiser warnings in IBus unit test.
+
+[33mcommit cd69ba142287d0f376e23a909cb73118817c262a[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Fri Oct 21 16:23:28 2016 +0200
+
+    Remove MSP_MOTOR_PINS.
+
+[33mcommit 8906a17c415394db862b0ed046599923235ddf9a[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Oct 20 23:18:05 2016 +0200
+
+    IRCFUSIONF3 - Add missing MPU INT Pin Config. Closes #2383
+
+[33mcommit 92a59b8da5fce5e3c1f90b991f4ef048ad013f8d[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Oct 20 21:11:58 2016 +0200
+
+    Fix inverted logic from 3005a58948d52d117ccfef68dcc2d32d3fba6dbe
+
+[33mcommit 3cfc9f766ddfe899247de9ba34c77bf32777d0a8[m
+Merge: 3005a58 4cf57fe
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Thu Oct 20 17:40:45 2016 +0200
+
+    Merge pull request #2341 from andrew-milovidov/patch-1
+    
+    ibusFramePosition update
+
+[33mcommit 3005a58948d52d117ccfef68dcc2d32d3fba6dbe[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Oct 20 17:27:41 2016 +0200
+
+    Allow board alignment to be disabled on CJMCU.  CJMCU only ever has one
+    alignment.
+
+[33mcommit 859dd3418d15ee27dab3aef1c1b7a24ab203f685[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Oct 20 17:20:37 2016 +0200
+
+    Allow disabling of CLI features to reduce code size.
+
+[33mcommit 5f346e857fe83f15c9512572dd02dc8349418447[m
+Merge: 461cd96 def22c8
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Thu Oct 20 16:56:52 2016 +0200
+
+    Merge pull request #2415 from unitware/ibus-telemetry
+    
+    FlySky Ibus telemetry support
+
+[33mcommit 461cd9673e18b656ed49f4f63b5eac525eaf20ef[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Wed Oct 19 22:10:27 2016 +0200
+
+    Delete unused servo angle at min/max code.  It was added for TILT
+    support that never materialized.
+    
+    We can of course revert this commit to restore it, as needed.
+
+[33mcommit 40bd6dc7cefa83b1267925e1cd5814452af5ced9[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Wed Oct 19 21:40:49 2016 +0200
+
+    Delete MSP_BF_CONFIG and MSP_SET_BF_CONFIG.
+    
+    Configurator has finally been updated to use alternatives that have been
+    in the API for a long time now.
+
+[33mcommit c5c65798c4a26e3aac01f583cbfdc5a87f2280c5[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Wed Oct 19 21:16:32 2016 +0200
+
+    Commenting out some unused deprecated MSP commands to ensure they cause
+    compilation errors if they are used.
+
+[33mcommit 886e55f7d0182a0cfc32186e13d632b1072556f2[m
+Merge: 50fc967 9197813
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Oct 19 20:00:09 2016 +0200
+
+    Merge pull request #2459 from martinbudden/cf_rx_rationalise
+    
+    Rationalised rx interface so serial/pwm/ppm/msp have same interface
+
+[33mcommit 50fc967de054584ad3ba39e51d22fe064539395d[m
+Merge: 696d5d9 f11b615
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Oct 19 19:56:58 2016 +0200
+
+    Merge pull request #2460 from ledvinap/fix-nvic-macros
+    
+    Fix NVIC_PRIORITY_SUB to return correct bits
+
+[33mcommit 696d5d919310d8ac9c443654aafbeda06dca56d3[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Wed Oct 19 17:07:55 2016 +0200
+
+    Allow channel forwarding on SPRacingF3EVO/SPRacingF3MINI
+    
+    EVO - ESC 5-8, MINI - ESC 5-8 and UART3 RX/TX.
+
+[33mcommit 94256215f19c577f8a86d4650b4a5933ae6f0eca[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Wed Oct 19 15:59:53 2016 +0200
+
+    SPRACINGF3EVO - Update PWM mapping to allow more servo outputs on ESC5
+    to 8.
+
+[33mcommit f11b615d971a27bba5c5d792ab7a048d2c33551c[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Wed Oct 19 15:12:21 2016 +0200
+
+    NVIC macro unittests
+
+[33mcommit ecaf070880da6464575cfdfd9a0a536a7cc6e900[m
+Author: oleost <oleost@gmail.com>
+Date:   Wed Oct 19 10:24:38 2016 +0200
+
+    Changed mag orientatinon (#711)
+
+[33mcommit 6f8ab033a8cbd7136230a8d06bed5282173788c1[m
+Author: Konstantin Sharlaimov (DigitalEntity) <konstantin.sharlaimov@gmail.com>
+Date:   Tue Oct 18 14:42:12 2016 +1000
+
+    Fix axis directions for AK8963 compass (MPU9250 compass chip)
+
+[33mcommit 01cf66de651f7bfb7a8e9ed90cf7a630ba48d6d3[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Wed Oct 19 13:56:28 2016 +0200
+
+    Fix NVIC_PRIORITY_SUB to return correct bits
+
+[33mcommit def22c884aba5c173af32dc6b91f3f3fd589ca1e[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Wed Oct 19 13:15:59 2016 +0200
+
+    updated function prototype after rebase
+
+[33mcommit 9cb4cf917159be70d3d6015b54f8c309b26291c2[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Thu Oct 13 12:05:01 2016 +0200
+
+    handle all in rxbuffer at once
+
+[33mcommit 4a108d2b97d8c39df8e797eb75c833f98b472a73[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Wed Oct 12 22:28:27 2016 +0200
+
+    rescedule telemetry task period only if ibus is enabled
+
+[33mcommit 0b16a5ece850ce5e7f576a5f84129df37f341517[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Wed Oct 12 20:33:13 2016 +0200
+
+    ignore characters that are echoed back from the bidirectial serial wire
+
+[33mcommit 4f0ac442378a910790da9950bc76bfdae568b151[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Fri Oct 7 13:58:48 2016 +0200
+
+    small updates after second review
+
+[33mcommit 6ee296b88500f76d6e237d57f4ae8d9a4dc111d6[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Tue Sep 27 20:43:00 2016 +0200
+
+    doc: do not use FS-iA4B for ibus telemetry
+
+[33mcommit 6376343ced0d6075bfed36094fdd6c9e57b20914[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Mon Sep 26 09:19:49 2016 +0200
+
+    added docs on telemetry hardware
+
+[33mcommit c33568bbdb407b3a5abb8fa77f21ba45406b30e0[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Fri Sep 23 10:18:09 2016 +0200
+
+    add define flag TELEMETRY_IBUS to include feature in build (inspired by iNav) #2 - added missing check
+
+[33mcommit d2b7fe92263e4ce86584c79f7ea012b40fa3dc25[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Fri Sep 23 09:34:17 2016 +0200
+
+    add define flag TELEMETRY_IBUS to include feature in build (inspired by iNav), enable SONAR in builds that had memory space issues
+
+[33mcommit da0235db85dd016a59295203617415a956f03421[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Wed Sep 21 16:45:39 2016 +0200
+
+    handle temperature values better
+
+[33mcommit 90ad3fbe425ab1b6a9a48c05eb9dcb89528439da[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Wed Sep 21 12:44:12 2016 +0200
+
+    cleanup, removed a bevildering boolean
+
+[33mcommit 3f2085f526af5150c8cbfd184335ff4e6cbbfca1[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Wed Sep 21 12:43:42 2016 +0200
+
+    cleanup of transmit path, removed empty checksum fields in the tx buffers
+
+[33mcommit 9d75d149faa715af3560ff4e09313c836ad2b866[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Tue Sep 20 22:18:29 2016 +0200
+
+    code style formatting updated by astyle
+
+[33mcommit 3b8e07ef79fbf13204d4cd014a0d7cb3583c73f7[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Tue Sep 20 14:07:30 2016 +0200
+
+    use signed integer for temperature
+
+[33mcommit c855083e4162ff38e512a7227550a970057d3be6[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Tue Sep 20 13:52:32 2016 +0200
+
+    use the common definition of ARRAYLEN
+
+[33mcommit caa4c5be11e08b005ba1332f45e4cad6682cb534[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Tue Sep 20 12:21:55 2016 +0200
+
+    Some updates after code review
+
+[33mcommit d9f8295ed6b206ee39a5eb4d182567359c7cba82[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Mon Sep 19 13:15:19 2016 +0200
+
+    disabled SONAR to make room for image in CC3D
+
+[33mcommit 777004ba5c9f881026de129dbda8422b841d3a74[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Mon Sep 19 10:32:36 2016 +0200
+
+    updates after merge
+
+[33mcommit ceac188b4129007992ffe0915886142a1c09fce7[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Thu Sep 15 09:54:20 2016 +0200
+
+    updated documentation with ibus telemetry
+
+[33mcommit 5915319087905427797af444ea644edbd217e9a5[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Thu Sep 15 09:01:55 2016 +0200
+
+    update include paths after merge
+
+[33mcommit 804188bbcb8870b8ae9fdf063341af2a6e9f0746[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Wed Sep 14 11:03:40 2016 +0200
+
+    disabled SONAR to make room in image
+
+[33mcommit de449e2fd42b7398583a0123e0824e39e6375d92[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Sun Jul 10 21:31:34 2016 +0200
+
+    Use the first address received as base address for the sensors
+
+[33mcommit fab9ac326eda4f7fedeb96a08b7fda699457429c[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Fri Jul 8 12:42:40 2016 +0200
+
+    use configuration to select if vbatt or a calculated cell voltage should be reported
+
+[33mcommit e46d4d525998f8e91c4a9287795e6601a69f4ab1[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Tue Jun 21 23:16:44 2016 +0200
+
+    updated test after new temperature source is used (from barometer)
+
+[33mcommit d7379e2131d26c46e8489d4310b20cace4c29af8[m
+Author: Morgan Leborgne <leborgne@zib.de>
+Date:   Mon Jun 20 21:19:34 2016 +0200
+
+    Fix ibus temperature telemetry.
+    
+    The temperature need to be sent as 1/10 of a degree.
+
+[33mcommit 7cd419aa055ea2d1fe4afd6c1290e96627fb1d39[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Mon Jun 20 09:09:26 2016 +0200
+
+    small cleanup
+
+[33mcommit 21d19e2980761684b2a61a3ef98c9bc8fea32f20[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Mon Jun 20 09:07:31 2016 +0200
+
+    cleanup of serial port stub
+
+[33mcommit 559361f0c6a353af2f1db234722ae236716bcb7c[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Mon Jun 20 09:06:38 2016 +0200
+
+    cleanup ibus tests, added temperature sensor measurement
+
+[33mcommit a22c890be03de3661d10ff85f259a61cef7805c2[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Sun Jun 19 23:22:00 2016 +0200
+
+    unit tests of telemetry/ibus
+
+[33mcommit acad0b853f123dc68161cdeead254f665af38aed[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Fri Jun 17 22:07:11 2016 +0200
+
+    report cell voltage so that the alarm limits can be used in the transmitter (they are limited to max 10 Volts)
+
+[33mcommit 3f27f7489b2f9f91462f64b95f90b61b87dcd3b5[m
+Author: Magnus Ivarsson <magnus@unitware.se>
+Date:   Fri May 27 21:25:00 2016 +0200
+
+    fixes after rebase to v1.13.0-RC1
+
+[33mcommit 13f48e4756e9741ea1f08a65a95a1549d1f170e0[m
+Author: Craig J Perry <craigp84@gmail.com>
+Date:   Tue Jan 26 21:54:52 2016 +0000
+
+    Mark ibus as shareable with MSP on a serial port
+
+[33mcommit dad3d82bf7b7b161adb6f002a7a367fc3189fb48[m
+Author: Craig J Perry <craigp84@gmail.com>
+Date:   Mon Jan 25 21:40:37 2016 +0000
+
+    Fix battery voltage scale
+
+[33mcommit c3d53e04e9aad03e06a7397039da83364d3f3bd6[m
+Author: Craig J Perry <craigp84@gmail.com>
+Date:   Mon Jan 25 21:12:53 2016 +0000
+
+    Expose throttle via motor telemetry field. Reformat source file.
+
+[33mcommit 9ee4e3eb080b824da7af945055215ca783d4b675[m
+Author: Craig J Perry <craigp84@gmail.com>
+Date:   Mon Jan 25 17:26:29 2016 +0000
+
+    Integrate ibus runtime
+
+[33mcommit 2e226166e9a4f9d07af0e2b7612e2876718589ca[m
+Author: Craig J Perry <craigp84@gmail.com>
+Date:   Mon Jan 25 03:53:39 2016 +0000
+
+    Add ibus telemetry support
+
+[33mcommit 9197813368a09af4f14f4544cf04dbafe12f599f[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Tue Oct 18 22:04:51 2016 +0100
+
+    Fixed up tests
+
+[33mcommit f6e0fa4949fedeb0534a366768eed6b8ace81827[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Tue Oct 18 16:50:03 2016 +0100
+
+    Rationalised rx interface so serial/pwm/ppm/msp have same interface
+
+[33mcommit 0fa817a39f6eb8cb9fe44fc4df94c946dea312d1[m
+Merge: 240e701 6097e7c
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Tue Oct 18 12:53:59 2016 +0200
+
+    Merge branch 'martinbudden-cf_header_tidy'
+
+[33mcommit 6097e7c3c04742924949c723b3fe72b6c33e5fc3[m
+Merge: 240e701 83d335b
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Tue Oct 18 12:52:54 2016 +0200
+
+    Merge branch 'cf_header_tidy' of https://github.com/martinbudden/cleanflight into martinbudden-cf_header_tidy
+
+[33mcommit 240e7017efbc80d0cefa699d15ced406e7d32361[m
+Merge: 181857f 980f9b3
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Tue Oct 18 12:46:57 2016 +0200
+
+    Merge branch 'martinbudden-cf_streambuf_serial_const'
+
+[33mcommit 980f9b363dda4f62b179c380c4a658875dee03ac[m
+Merge: 181857f 6f5855b
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Tue Oct 18 12:46:42 2016 +0200
+
+    Merge branch 'cf_streambuf_serial_const' of https://github.com/martinbudden/cleanflight into martinbudden-cf_streambuf_serial_const
+
+[33mcommit 181857f3d4e96aeb35b8d20bed7b7be79296bf16[m
+Merge: 9065986 3b351e8
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Tue Oct 18 12:38:59 2016 +0200
+
+    Merge pull request #2449 from martinbudden/cf_gyro_init_tidy
+    
+    Tidied gyro initialisation
+
+[33mcommit 906598661e998187d663a587c0514088730a766b[m
+Merge: 52fe1ed 8a2d946
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Tue Oct 18 12:37:38 2016 +0200
+
+    Merge pull request #2450 from martinbudden/cf_rx_readraw_const
+    
+    Made rx ReadRawRC functions const correct
+
+[33mcommit 52fe1ed989b9d90bdc1e119e8b51f144a93e9ea3[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Oct 6 19:13:41 2016 +0200
+
+    Fix invalid PGN numbers - top 4 bits are reserved for version when
+    stored.
+
+[33mcommit f233d53fc258aa6062e526fb86b656ce47bc2e91[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Oct 17 19:47:50 2016 +0200
+
+    Adjust gyro-sync so that it's possible to tell by the debug information
+    if the sync is actually working.
+
+[33mcommit 5778f7d978c974c79824121482be4e38df6a046c[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Oct 17 20:10:12 2016 +0200
+
+    Use uint32_t for serial bytes waiting to fix a longstanding FIXME from
+    when USB VCP was added.
+    
+    Also merges a couple of USB VCP code cleanups from betaflight.
+
+[33mcommit f12c14ff7b8eb75ee1fe59ab360d389f60e94d60[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Oct 17 02:30:47 2016 +0200
+
+    Bump MSP API version.  Reorder MSP_STATUS values.
+    
+    This change keeps the averageSystemLoadPercent at the same offset for
+    both OSD and FC boards, it matches the v1.14.0-RC1 code.
+    Without this change users experiance upgrade issues when configurator
+    would hang.
+
+[33mcommit ff2385f1f2ecda6fd29216cb18b733ef2ff1e376[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Oct 16 18:39:32 2016 +0200
+
+    Rename MSP_BATTERY_STATES to MSP_BATTERY_STATE. There are no usage
+    scenarios for multiple batteries right now.
+
+[33mcommit 954faf43e6ff813245a8ae6fd6e23b30b35056fa[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Oct 16 16:24:10 2016 +0200
+
+    More current to amperage renames.
+
+[33mcommit cdcf6fdd9b5d338c5ea8f4a76d2fc57af5f4273a[m
+Merge: f90a4ec 2404270
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Tue Oct 18 12:09:26 2016 +0200
+
+    Merge pull request #2446 from digitalentity/cf-i2c-fix
+    
+    Fix I2C bus error handling for F1 targets
+
+[33mcommit 8a2d946a60d795b224fcfe8d3f2fdba8871f3b1f[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Fri Oct 14 19:32:20 2016 +0100
+
+    Made rx ReadRawRC functions const correct
+
+[33mcommit 6f5855bf9cb3ba15c36cbbda2a6e543dd5f3dcc0[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Fri Oct 14 11:41:17 2016 +0100
+
+    Further fixups of const correctness
+
+[33mcommit f3b662d6b0c33d134db01a5a630f43e83668235f[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Fri Oct 14 10:37:35 2016 +0100
+
+    Fixed up const correctness for usb_vcp and tests
+
+[33mcommit a28a939934e61da5695dcd9d74ded45d80a4efbf[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Sun Oct 2 22:54:43 2016 +0100
+
+    Improved const correctness of streambuf and serial
+
+[33mcommit 3b351e8c8c5cacc1d696474c1ab503a1bb76e179[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Fri Oct 14 09:32:19 2016 +0100
+
+    Tidied gyro initialisation
+
+[33mcommit 83d335b59d62137b735c32c1a619ac08d1cb66d1[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Fri Oct 14 06:55:33 2016 +0100
+
+    Fixup after rebase
+
+[33mcommit d50213e944667269e286b7eb9ae27c89bfc80d45[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Mon Sep 26 08:00:41 2016 +0100
+
+    Tidied header files and reduced dependencies
+
+[33mcommit f90a4ec3033092b5203823d086eeb0b2deb4e703[m
+Merge: de2b0a3 5832514
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Fri Oct 14 01:30:58 2016 +0200
+
+    Merge branch 'CraigJPerry-dev-docs'
+
+[33mcommit 58325145e56f71c1879cb285004d75d1244082d3[m
+Merge: de2b0a3 72e1fab
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Fri Oct 14 01:29:24 2016 +0200
+
+    Merge branch 'dev-docs' of https://github.com/CraigJPerry/cleanflight into CraigJPerry-dev-docs
+
+[33mcommit de2b0a3ae01d6ad2dc95ba29c0b4f93ecc290b2a[m
+Merge: dcabff5 7c26616
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Fri Oct 14 01:11:31 2016 +0200
+
+    Merge pull request #1852 from el-ethan/patch-1
+    
+    Fix broken link to Spektrum Rx
+
+[33mcommit dcabff5ef9e0d48ab0c0be9d002c7ff2ef5add06[m
+Merge: f21ab22 fa18143
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Fri Oct 14 01:04:19 2016 +0200
+
+    Merge pull request #2308 from martinbudden/fix_gyro_config
+    
+    Moved gyro params out of imuConfig_t into gyroConfig_t
+
+[33mcommit 2404270f69a6d780dd043b750186cf17d44d8654[m
+Author: Konstantin Sharlaimov (DigitalEntity) <konstantin.sharlaimov@gmail.com>
+Date:   Thu Oct 13 19:58:09 2016 +1000
+
+    Fix I2C bus error handling for F1 targets
+
+[33mcommit fa18143be6bf7c9b7725ea329a16a67a9cd8dfd9[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Thu Oct 13 10:25:52 2016 +0100
+
+    Fixed up some gyroInit function declarations
+
+[33mcommit 36bb843af62011bf18adce3610ebb96a39d442d5[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Wed Jun 1 17:32:17 2016 +0100
+
+    Moved gyro params out of imuConfig_t into gyroConfig_t
+
+[33mcommit f21ab229c08949ceeb4038cba9a6248e2ebf9f78[m
+Merge: e83a0c5 0a93ad3
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Thu Oct 13 09:31:54 2016 +0200
+
+    Merge pull request #2168 from hori64/master
+    
+    Smart Port telemetry GPS ground speed unit is not applicable. (#2166)
+
+[33mcommit e83a0c50bba1c9978aab7bebbbdad08a1910856a[m
+Merge: e2d51a7 3391bc1
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Thu Oct 13 09:29:32 2016 +0200
+
+    Merge branch 'mavlink-cleanup'
+
+[33mcommit 3391bc100d1047a51e6357f5654072d54af4d7b7[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Oct 13 09:28:51 2016 +0200
+
+    relocate mavlink library code to lib/main/mavlink
+
+[33mcommit bb842ee0726fd5c34fdc553d327aeb3d3249b4d5[m
+Merge: a07eb7f e2d51a7
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Thu Oct 13 09:19:59 2016 +0200
+
+    Merge branch 'master' into mavlink-cleanup
+
+[33mcommit e2d51a792bbe084f644f552ddaf82231eb7c4c7c[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Wed Oct 12 22:41:54 2016 +0200
+
+    Cleanup duplicate PG_MOTOR_CONFIG.
+
+[33mcommit 2dc9928c41f0e40b941c1cc16465a7557e1ca155[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Mon Sep 26 19:38:55 2016 +0100
+
+    Fixed up motorConfig reserved bytes
+
+[33mcommit 6c3da1e802a5ba18895f687cc5a8d5fa6da70739[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Mon Sep 26 13:39:05 2016 +0100
+
+    Added reserved motor param for compatibility. Fixed up tests
+
+[33mcommit ebbe2190a787acb55ac419a9e0475a0d56a0b405[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Mon Sep 26 08:00:41 2016 +0100
+
+    Split motor_and_servo.* into motors.* and servos.*
+
+[33mcommit 6861e7f72246548a9e1366bde69eeeb5a9634269[m
+Merge: 30ddd25 cf71313
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Oct 12 22:33:56 2016 +0200
+
+    Merge pull request #2402 from Bengt-M/developmentDoc
+    
+    Update developer documentation.
+
+[33mcommit 30ddd2528110a2a0e31a8f552972b52e60702689[m
+Merge: 003ccc2 06fa260
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Oct 12 22:24:47 2016 +0200
+
+    Merge pull request #2440 from scottlykken/rmdo_HMC5883
+    
+    Add HMC5883 compass support to RMDO target
+
+[33mcommit 003ccc29ce5d2ae4e244793954972f1cf87ab52e[m
+Merge: ea40600 36c4eef
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Oct 12 22:24:14 2016 +0200
+
+    Merge pull request #2441 from Firehammer047/patch-1
+    
+    Update Notes.md
+
+[33mcommit ea40600b4967caa707d1e89384dfd00701679ca0[m
+Merge: 699d4a4 cfa24d8
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Oct 12 22:14:20 2016 +0200
+
+    Merge pull request #2416 from cleanflight/betaflight-merges-1
+    
+    Merge some betaflight changes into CF.
+
+[33mcommit cfa24d8f0dab6c1e9861c888cddb3caaead7b47d[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Wed Oct 12 20:07:18 2016 +0200
+
+    use 2K gyro by default on CC3D.
+
+[33mcommit 47fbe0fe49c28fd46b5065027d51f9ee2f4df7be[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Wed Oct 12 19:59:38 2016 +0200
+
+    Prevent USB initialisation failure on CC3D by bringing forward the port
+    allocation code in the init sequence.
+
+[33mcommit 30da478216a490889a6700e1de21af7050a3d3e0[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Wed Oct 12 19:22:32 2016 +0200
+
+    disable gyro-sync on the EVO due to slow MAG reads causing jitter.
+
+[33mcommit 62b4c607a3ebc6f6b90c169a2ab740055826e061[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Wed Oct 12 19:22:05 2016 +0200
+
+    various cleanups and bug fixes to the gyro-sync code.
+
+[33mcommit 36c4eef35672a19e174a8f0934db009c8798d2f5[m
+Author: Firehammer047 <Firehammer047@gmail.com>
+Date:   Sun Oct 9 13:31:33 2016 -0400
+
+    Update Notes.md
+    
+    Typo fixed
+
+[33mcommit 06fa260a4f2eb9a6cd13e51966fb5205f9611aa6[m
+Merge: 6e6f3a7 537c844
+Author: Scott Lykken <scottlykken@gmail.com>
+Date:   Sat Oct 8 11:42:31 2016 -0700
+
+    Merge branch 'master' into dodo
+
+[33mcommit 783d5f5a2704b4dd50d0c7168278907a0a744240[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Sep 29 05:08:38 2016 +0200
+
+    Enable Gyro Sync on SPARKY.
+
+[33mcommit 2b9dcad0b2b355ed3f12a10e99aa5086a9177480[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Sep 29 04:50:16 2016 +0200
+
+    CJMCU - Temporarily disable CLI.
+
+[33mcommit 5b09fe605be3aa753c11198e659eea32cc47caa8[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Sep 29 04:47:00 2016 +0200
+
+    Disable GPS on CC3D due to code size reasons.
+
+[33mcommit a2a290cfcd06913152291fd2a03e73eb363bf2e9[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Thu Sep 29 04:46:29 2016 +0200
+
+    Fix MPU6000 SPI to use updated gyro API.
+    
+    Should have been in 61e5fbd40386abc02b63b17fe1c33b748e838ca7
+
+[33mcommit c75865814d4c6f6709ede008fe196feaa8cb2eeb[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Sep 29 03:55:41 2016 +0200
+
+    reorder some fields in the new version of the imuConfig PG.
+    
+    Things least likely to change are first.
+
+[33mcommit 23b39198c49ca4df51c073afe582d5dae3f069e5[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Sep 29 03:44:39 2016 +0200
+
+    Disable gyro sync on Naze32 rev 4 and below.
+
+[33mcommit 387d99119256433dc70fbe30e8c7be800a1f3872[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Sep 29 03:15:46 2016 +0200
+
+    remove intermediate gyro sync code now that the drivers handle the
+    interrupt counting.
+
+[33mcommit 61e5fbd40386abc02b63b17fe1c33b748e838ca7[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Sep 29 02:59:17 2016 +0200
+
+    Handle different gyro sync interrupt timing differences.  Prevent LPF /
+    Gyro Sample HZ mismatches.
+
+[33mcommit 7544eb16570745bd5e4408653f9853a3570ef749[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Sep 29 00:40:44 2016 +0200
+
+    Remove legacy gyroGetMPU6xxxDivider
+
+[33mcommit 660776fc7ad21ae69f285aa1ea82649fb0d0371b[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 27 21:55:23 2016 +0200
+
+    Use 2K/2K GYRO/PID for STM32F3 targets with I2C sensors.
+
+[33mcommit 10d0f08428028bf0e116b66c24d5f820f332f401[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 27 21:17:54 2016 +0200
+
+    fix unused variable warning.
+
+[33mcommit 35c3dc0e9c94cc80116f9ee02a306a0c3504194b[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 27 21:15:27 2016 +0200
+
+    fix mpu6000 compilation errors
+
+[33mcommit 375e9e8ac7018f3033105f6a0391f9c1319260a3[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 27 20:49:48 2016 +0200
+
+    use gyroADCf in lux float.
+
+[33mcommit da8f0253920336fc3c710df73c349cae5aa24ec0[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 27 16:55:55 2016 +0200
+
+    ensure gyro has readings before running pid
+
+[33mcommit 9e8d7cc47cba8be9a79be37c660e9503056314fe[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 27 16:02:39 2016 +0200
+
+    Disable short gyro sync timeouts.
+    
+    Likely a solution to timeout after a LONG period is still required.
+
+[33mcommit 9e314abb189f57fd15d76d3752531852f510161b[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 27 15:59:41 2016 +0200
+
+    disable realtime guard interval.
+    
+    it was observed that the CPU was always over 300%.  with it disabled the
+    reported CPU load is < 100%.
+    
+    requires further investigation.
+
+[33mcommit 22ff299c9805f044b6b30ecad0cee47004d23c8a[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 27 15:58:12 2016 +0200
+
+    relocate code from the pid task so the pid task actually runs the pid
+    code and the taskPidCheck actually decides when to run it.  previously
+    the responsibility of the taskPid method was mixed between both.
+
+[33mcommit 568cce11c15fd89c5390ac3d97bfd3e77e8e8158[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 27 05:56:28 2016 +0200
+
+    allow room for gyro sync interrupt timing errors.
+
+[33mcommit 1a02606fcb11ec97574a9c3ee9c35f0287ecc443[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 27 16:53:29 2016 +0200
+
+    update imu defauts
+
+[33mcommit b3352de256e34b8113cfac49288beee12768ad0b[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 27 03:36:18 2016 +0200
+
+    re-instate gyro-sync functionality.
+
+[33mcommit d6a0008f37b1c2d67f79b36f5e66fb9af17cf0f2[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 27 17:48:45 2016 +0200
+
+    fix eeprom unit test
+
+[33mcommit 04d61ad1d30e1d4a71dfad32bb413835a24473de[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Sep 25 23:42:56 2016 +0200
+
+    further cleanup filter usage.  This speeds up the gyroUpdate() code by
+    using pt1FilterApply() instead of pt1FilterApply4 - less argument
+    passing and less conditional code is executed each loop.
+
+[33mcommit 7c10551f5f5a41ecf50696f32b6a64ee3a9f6f56[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Sep 25 23:29:31 2016 +0200
+
+    Specify gyro periods in HZ using time macros.
+
+[33mcommit 0647f7772ae4dd2879107bcf9896d160473fa973[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Sep 25 22:53:26 2016 +0200
+
+    Allow CLI configuration of `gyro_lowpass_level` and
+    `dterm_lowpass_level`
+
+[33mcommit 6755dcbd3035b2d4ccdc6a0fe56b1cd82695cff5[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Sep 25 22:07:10 2016 +0200
+
+    remove unused boolean flags - should have been in
+    0e22db7ec16ca5a2b01b9d8276ced5e5966195b7
+
+[33mcommit 7801181ff920d4b02d90648a78762dc6c63de4d2[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Sep 25 21:54:55 2016 +0200
+
+    remove duplicate pt1 filter initialisation code.
+
+[33mcommit 5cdd315bc3dc1313d6b3d1a55068a3b190cad385[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 27 15:16:17 2016 +0200
+
+    fix filter initialisation
+
+[33mcommit 3bb51912dcf6712e7fb8bc30b68625c0a2dcbb12[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Sep 25 21:47:35 2016 +0200
+
+    cleanup pid filter initialisation
+
+[33mcommit aebefabd7f54fa68ba6d741ccfa8cc491eb97f00[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Sep 25 21:31:31 2016 +0200
+
+    Update naming of filter argument and local variables.
+
+[33mcommit 79fc7907b369ca702ab9063f1ef39870ab5ae6c1[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Sep 25 21:20:21 2016 +0200
+
+    Update filter comment style and content.
+
+[33mcommit a8b4697b7099859a925d44db3266c55ca10a31ef[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Sep 25 21:18:13 2016 +0200
+
+    Delete duplicate argument usage from biquadFilterInitNotch which is
+    possible now that notch Q calculation is internal.
+
+[33mcommit 9f70a0ff26c9d8bd85a9da95ca9c736dc5c4ab62[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Sep 25 21:13:47 2016 +0200
+
+    add some basic unit tests for the biquad filter
+
+[33mcommit 57080b5a04836146dbf5c7142ccf04f67d044971[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Sep 25 20:48:16 2016 +0200
+
+    reduce calls to powf() in biquadCalculateFilterNotchQ
+
+[33mcommit e962f8fbfdbb4a3d8d6e9d8e3e8c3d3fb64cd0d6[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Wed Sep 21 12:00:23 2016 +0200
+
+    move gyro lpf definitions into accgyro.h
+
+[33mcommit 60ee5fdafda9986851b3ab2ccfdefd80cdce6e21[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 21:14:37 2016 +0200
+
+    Remove old colibri race looptime
+
+[33mcommit da167e44078daa8193dea6a16675bc1801fd1287[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 19:18:25 2016 +0200
+
+    Cleanup debug mode configuration.
+
+[33mcommit d87ff09dd72b7397d607d69dfad15f50482da044[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 19:13:58 2016 +0200
+
+    optimize `getdT` usage.
+
+[33mcommit 3a849948412b6938d76e257a386719ae9a718442[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 19:11:00 2016 +0200
+
+    reorder new fields to appear at the end of the PG so the a PG version
+    bump is not required.
+
+[33mcommit 1e1c489256a1e6a18ded28ffdfc7a0a061fe9d7a[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 18:59:51 2016 +0200
+
+    delete attempt to fix cpu overloading which was overridden elsewhere.  a
+    proper solution needs to be found.
+
+[33mcommit 52ee245ba3503295af8b184823e1b1882f259f16[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 18:57:43 2016 +0200
+
+    fix 1:2 process divide when `gyro_soft_lpf_hz==0`
+    
+    credit: @ledvinap and @borisbstyle
+
+[33mcommit 927c8332d18c0662dcbf64bb979705276eee97b5[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 18:54:01 2016 +0200
+
+    initialise two static variables for clarity.
+
+[33mcommit c15af7f148f6aef6bdbacdb8bbab5e8ba2868abf[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 18:52:33 2016 +0200
+
+    rename setPidUpdateCountDown to a slightly less confusing name -
+    pidCalculateCountdown
+
+[33mcommit e3211c57f49f88fe1eecb0224d646318d325f7e0[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 18:48:55 2016 +0200
+
+    Delete accTargetLooptime code which did nothing.
+
+[33mcommit c432aee9caa673409ebdbd7feec1e726529b1e44[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 18:39:52 2016 +0200
+
+    remove pid/gyro denom reset code until a better solution is found.
+
+[33mcommit 28d7fac6c521bc0ec95af7b826c780f07ad399bd[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 18:37:05 2016 +0200
+
+    Fix unitialisated variable targetPidLooptime usage by reorganizing
+    initialisation sequence.
+
+[33mcommit 554c2b1c54897e4731443c9c1b18a53f01474ad5[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 18:30:22 2016 +0200
+
+    hide notch filter Q generation, it's an internal implementation detail.
+    
+    Suggestion by @ledvinap.
+
+[33mcommit bd1714dda55c915b663405f275c81a0d2561abb9[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 18:10:04 2016 +0200
+
+    delete unused filter averaging code.
+
+[33mcommit 0b101bb6ef521fe18eaacdfa4c3830f18ea102fa[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 18:07:27 2016 +0200
+
+    Add missing parentheses
+
+[33mcommit ec6a4afb0b52ea82583657d60a43facb8ea8afa1[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 16:43:13 2016 +0200
+
+    fix another failing unit test
+
+[33mcommit 45c4c14371397126e19711741839eefedcd2b58a[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 13:10:09 2016 +0200
+
+    Fix MSP unit test - MSP_LOOPTIME no-longer used.
+
+[33mcommit 235afcb4ffcc9ca094fa33ea8b5aa620abdb06aa[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 12:53:52 2016 +0200
+
+    Fix pid unit tests caused by changes to delta time.
+
+[33mcommit 5fde8d0917597612e7134ba3abd31640d6f343a6[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 12:23:44 2016 +0200
+
+    fix some compilation and test failures.
+
+[33mcommit ec160f097e0bd4fcfc9da44aa7940a1726bfd047[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 12:17:43 2016 +0200
+
+    fix renamed members
+
+[33mcommit 7f183310f589582c9d500064335d32cf8e7633ad[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 12:14:51 2016 +0200
+
+    Remove duplicate include.
+
+[33mcommit 663a63207e685d5f2c94518838d1f82c6a062e71[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 12:08:45 2016 +0200
+
+    remove old looptime configuration from Alienflight builds.
+
+[33mcommit 2095a5ea24f78493603deb24801200325a01c814[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 12:08:12 2016 +0200
+
+    Fix compiler warnings relating to non-portable code.  This also changes
+    the defaults for MPU6500/6000 SPI.  The best place for such defaults is
+    in the target files.  More testing and optimization is required before
+    the BF SPU MPU6500/6000 defaults are used anyway so that can wait a
+    little.
+
+[33mcommit 4112f5759808619abf3b270780ca959757fdfa40[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 11:42:26 2016 +0200
+
+    Avoid maybe-uninitalized compiler warnings.
+
+[33mcommit 533c3a5ae481f5d843f490e2df67d8add7e01e02[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 01:23:25 2016 +0200
+
+    ensure dT is calculated the same way for all pid controllers.
+
+[33mcommit 425128f42b18f0c07d2cb080e26e6fe5f6829f83[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 01:21:11 2016 +0200
+
+    removed extern declaration.
+
+[33mcommit 4af351649e4dea48ccb50b64c56cb25b2810b20d[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 01:19:59 2016 +0200
+
+    reorder tasks to match BF
+
+[33mcommit a4dbf82134ce1b2953afdbfeb7df108a11b7ca79[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Sep 19 23:52:13 2016 +0200
+
+    use the dterm filter in luxfloat
+
+[33mcommit 0175c219da89240e102133dd18ca9f7e612dbe80[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Sep 19 23:37:47 2016 +0200
+
+    Disable gyro notch filter when the notch frequency is set  less than the
+    cutoff frequency - otherwise floating point errors occur in the biquad
+    filter.
+    
+    rename `gyro_soft_notch_cutoff` to `gyro_soft_notch_cutoff_hz`
+
+[33mcommit 8f73dacfd993b2c3764a32902d2005bd6df47c26[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Sep 19 23:36:33 2016 +0200
+
+    Add biquad filter infinity debug code (disabled by default)
+
+[33mcommit 435fc00d8296541346ad0454ce5f30b98d09aaae[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Sep 19 23:35:26 2016 +0200
+
+    Fix compilation error when using SONAR
+
+[33mcommit 51b506a205c2fd42fac683a50b69ee5cf78d2dc6[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Sep 19 22:12:06 2016 +0200
+
+    Fix dependency on imuConfig in sensor autodetect and double call of
+    gyroSetSampleRate
+
+[33mcommit 2a7a768c1510195772e23e8951c625f362e04c71[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Sep 19 19:42:59 2016 +0200
+
+    Merge some betaflight changes into CF.
+    
+    Work-in-progress.
+    
+    Note: Also fixes bug with mag valid readings being overwritten when MPU9250 mag has no new data.
+
+[33mcommit 699d4a4bfb74f79df0f2b97809f6eed5ef8155dc[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Sep 29 02:56:07 2016 +0200
+
+    NAZE - Workaround MS5611 not being detected if a BMP085 detection occurs
+    first.
+
+[33mcommit 80a57e75bdf485653f7edd8f7aa07b5150113a16[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Sep 29 02:49:27 2016 +0200
+
+    Fix BMP085 detection breaking gyro-sync on Naze32 rev 5.
+
+[33mcommit ef0d5419d44d04ce0e95cb8c41a6ce5b6068c1fc[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Sep 29 02:08:34 2016 +0200
+
+    fix compilation errors when altitudehold.c is included when BARO is not
+    used.
+
+[33mcommit 537c84480e442c948b87f68a1dae200c9400d159[m
+Author: blckmn <blackman@xtra.com.au>
+Date:   Wed Jul 13 19:39:03 2016 +1000
+
+    Added sdcard not present check
+
+[33mcommit 0abab4d52ccff9d14ce34a91d4436a39da713a95[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Fri Sep 23 21:26:00 2016 +0200
+
+    Minor changes to SKIP/USE and flash size defines.
+    
+    To avoid double negatives we prefer `#ifdef USE_*` instead of `#ifndef
+    SKIP_*`
+    
+    The CJMCU target still won't fit.
+
+[33mcommit f1e0240ca205e677f8c68ddc0ece9d952270f3da[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Fri Sep 23 21:28:56 2016 +0200
+
+    removed unused macro.
+
+[33mcommit a7854cdaa7fdf57209f354dcd4695d6e9b900aeb[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Sep 25 23:28:43 2016 +0200
+
+    Add useful time macros.
+
+[33mcommit e1ea0f18bff37a8ff0883cb46858c30fad6f5307[m
+Merge: dd2a122 bc65658
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Mon Sep 26 09:50:14 2016 +0200
+
+    Merge pull request #2428 from scottlykken/vscode
+    
+    Add .vscode to .gitignore
+
+[33mcommit 6e6f3a76f60e841339a203ba77244f691402a634[m
+Author: Scott Lykken <scottlykken@gmail.com>
+Date:   Sun Sep 25 20:01:40 2016 -1000
+
+    Add HMC5883 compass support in the RMDO target
+
+[33mcommit bc656582bd832823f76f8f039a1b8eb017323dd1[m
+Author: Scott Lykken <scottlykken@gmail.com>
+Date:   Sun Sep 25 17:50:20 2016 -1000
+
+    Add .vscode to .gitignore
+
+[33mcommit dd2a122ae644ca6cfbac24cc3b1559f7a2a56f05[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Sun Sep 18 17:37:58 2016 +0100
+
+    Prevent incorrect rescheduling for BMP280 baro dummy ut_delay (#612)
+    
+    (cherry picked from commit 79fdc6d3922ed75ca5732436c6517db279558f4c)
+
+[33mcommit cd4a814b6931eb81b016b510165df51fa7ca071e[m
+Merge: da6f588 c511781
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Sun Sep 25 14:27:28 2016 +0200
+
+    Merge pull request #2423 from AustinSaintAubin/patch-4
+    
+    Fixed CLI Table
+
+[33mcommit c511781feadab7e189e718dc7a0b959f1f3ee7fc[m
+Author: Austin St. Aubin <AustinSaintAubin@users.noreply.github.com>
+Date:   Sat Sep 24 10:50:35 2016 -0500
+
+    Fixed CLI Table
+    
+    cli.md is broken #2419
+
+[33mcommit da6f5884be31ecb2f582efd94aae3de0b17dc402[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Sep 22 22:24:27 2016 +0200
+
+    Fix wrong macro usage.
+
+[33mcommit 5e563323800bf3b500dd63487dc928173574ec0b[m
+Merge: 6a9bb00 84f8033
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Thu Sep 22 11:16:17 2016 +0200
+
+    Merge pull request #2421 from ledvinap/fix-pg
+    
+    Fix invalid length of EEPROM record
+
+[33mcommit 84f80339cc78ddf3e7e1c57051fe2a3bc5342ea3[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Thu Sep 22 10:12:07 2016 +0200
+
+    Fix invalid length of EEPROM record
+    
+    Invalid length was passed to pgLoad, overwriting PG data when record
+    size was increased
+
+[33mcommit 6a9bb00e42ddbad0bd89ae8fa48ffe0f9e698589[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Wed Sep 21 12:00:23 2016 +0200
+
+    move gyro lpf definitions into accgyro.h
+
+[33mcommit 0da66c41b0d2e06852950465bb06b2772f98a5cb[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Wed Sep 21 11:57:46 2016 +0200
+
+    fix missing gyro lpf definitions
+
+[33mcommit 5eb4336093dc5fe80a5482980e4b6fab0a1ca3ed[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 12:16:35 2016 +0200
+
+    fix eeprom test that was using a structure member that was deleted.
+
+[33mcommit 31570feecebc8cc90179c4ef76af606f0fafc57b[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 12:14:14 2016 +0200
+
+    Fix editor refactor mishap.
+
+[33mcommit 7aeb252194b6270e6867bc35f92bfb541adf30ee[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 19:07:28 2016 +0200
+
+    Replace task frequency comments with macro usage for self-documenting
+    code.
+
+[33mcommit ab8f6bbc01c8d5ac9072c805a310a6f214b96567[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 01:21:47 2016 +0200
+
+    constrain cpu load to 100% in CLI.
+
+[33mcommit 41da8963f8f00a88bda73fa5080b741fb6471977[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 01:20:28 2016 +0200
+
+    constrain CPU load to 100% for MSP.
+
+[33mcommit 81af909903d43c27aefaa32319ca78303b979ada[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 12:17:18 2016 +0200
+
+    remove usage of MSP_STATUS_EX
+
+[33mcommit e9ee2bce28894eac24a2868778a7484c232876f3[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Sep 19 23:53:31 2016 +0200
+
+    Change the default pid controller to lux float.
+
+[33mcommit 9ee9c75281ec9f4d7a948571f5c113f37e38c1bc[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Sep 19 22:15:05 2016 +0200
+
+    Use 256HZ gyro by default.
+
+[33mcommit 35fc3ec3413380f2fde59520cc06b52630349eb5[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 20 22:34:50 2016 +0200
+
+    Fix mag readings being reset when the mag isn't ready.
+    
+    The problem here is that some mag's have the ability to be asked if they
+    have data, but the cleanflight api doesn't leverage this.
+    
+    Perhaps CF should first ask if the mag has data, and then read it and
+    reset the values only if the mag read fails.  Even then I'm note sure
+    that's better than keeping the last heading (e.g. for telemetry when
+    finding a lost quad)
+
+[33mcommit f97287f003b6a16e708b59b5ff49cd0bb0ee0f5d[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Fri Sep 16 16:10:35 2016 +0200
+
+    Fix partial DMA transmissions causing subsequent read errors.
+    
+    Credit to @marbalon for the fix and investigation.
+
+[33mcommit 0798f7ba513b30c4dff0ff655dac30aa37ad9628[m
+Merge: 3d36914 ef9c098
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Fri Sep 16 16:13:42 2016 +0200
+
+    Merge pull request #2407 from ethomas997/addHorizonTiltEffectDocUpd
+    
+    Doc update for #2364 Horizon Mode SAFE/EXPERT modes
+
+[33mcommit ef9c098982d4781ed161c318b1c2f13486c6f516[m
+Author: E Thomas <ethomas997@etsphere.com>
+Date:   Thu Sep 15 20:06:59 2016 -0400
+
+    Doc update for #2364 Horizon Mode SAFE/EXPERT modes
+    
+    PID tuning.md:  Added Horizon Mode Commands,
+    updated description of Level-D for MWREWRITE.
+    CLI.md:  Added 'horizon_tilt_effect' and 'horizon_tilt_mode',
+    set 'd_level' default to 75
+
+[33mcommit 3d3691460875cffe180260369c93f37a33ab051c[m
+Merge: 6b4c36e 5893b2c
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Thu Sep 15 22:57:20 2016 +0200
+
+    Merge pull request #2401 from ledvinap/improvement-pg-reset
+    
+    Redesign PG loading from EEPROM
+
+[33mcommit 6b4c36e611144f9f0f7dfdcdd6f37abf929e4631[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Sep 15 22:01:40 2016 +0200
+
+    Add transponder feature to OSD boards.
+    
+    NOTE: Transponder is enabled by default because the GUI has not yet been updated to allow the transponder to be enabled/disabled.
+
+[33mcommit 5893b2ce805521d3451c679682091ecefb27981a[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Thu Sep 15 12:56:18 2016 +0200
+
+    Fix findEEPROM bug
+
+[33mcommit 787a5812f7c314a587deeb71916aceafd52c4299[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Thu Sep 15 12:55:49 2016 +0200
+
+    Fix formating
+
+[33mcommit 848061e202effdd739b940f4110cada37f2f40c2[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Sep 15 12:25:00 2016 +0200
+
+    Rename 'telemetry_flvss_cells' to 'telemetry_send_cells'.
+    
+    The former was too specific to be in telemetryConfig_t since it is frsky
+    and smartport specific.
+    
+    I considered moving it to frskyConfig_t but then smartport.c would have
+    a dependency on frsky.c - bad.  another option would be to have
+    duplicate settings in smartportConfig.c and frskyConfig.c but also bad.
+    
+    This change seems like an acceptable naming solution which could be
+    applicable for any telemetry system and doesn't mess up the
+    dependencies.
+
+[33mcommit af503135c3e4c7e9793876edd5641f850ff00261[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Sep 15 12:15:17 2016 +0200
+
+    reduce nesting - no code-size impact but code is cleaner.
+
+[33mcommit f1c7ecccaec3e425c614e811c290edce8500d407[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Sep 15 12:12:47 2016 +0200
+
+    Remove duplicate fields added by error in
+    c11dab442a627905b8f3bd6d9442442aaeb466ce
+
+[33mcommit 1d53f40428d49cf2a08cb884b5278ef49140fa14[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Sep 15 03:30:04 2016 +0200
+
+    Temporarily disable DISPLAY feature on NAZE target until a solution for
+    the recently increased code size can be found.
+
+[33mcommit 8b0ee87b2fb0d31cc0002aed8bd60013811df584[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Sep 15 03:27:22 2016 +0200
+
+    Delete some git cruft.
+
+[33mcommit 7a667bade8df23e2fd033ec409778c09abc46882[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Wed Sep 14 23:31:20 2016 +0200
+
+    Update parameter_group.c
+    
+    remove unnecessary code
+
+[33mcommit cf713132e81c6d62ccb0295036727f70da95b35d[m
+Author: Bengt <bengt.mansson@gmail.com>
+Date:   Wed Sep 14 21:32:00 2016 +0200
+
+    Mainly a consequence of b39fc74
+    
+    Replace link to old style
+    Remove old items 3 and 5 due to duplication
+    
+    plus some small things
+
+[33mcommit bc387784a8ab48b641115da00fd3cc0e3ef692d4[m
+Merge: 9dd6a1d dcb4695
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Wed Sep 14 23:13:06 2016 +0200
+
+    Merge branch 'Floyer007-documentation'
+
+[33mcommit dcb46957c49065e0d5a2a8935ce5043f8864e4f0[m
+Author: Florian Völker <info@iflowproduction.de>
+Date:   Tue Sep 13 22:27:52 2016 +0200
+
+    Some spelling fixes in docs.
+
+[33mcommit 6a1943d9f848c723304502d81c4267fc02b5b419[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Wed Sep 14 19:04:01 2016 +0200
+
+    Redesign PG loaging from EEPROM
+    
+    All parameter groups  initialized, either from EEPROM or reset to
+    default.
+    Stored record version is checked, mismatched version is ignored
+
+[33mcommit 9dd6a1db14a09c447fd8a0857ebdf0e9b0e7f95b[m
+Merge: c11dab4 0f4d959
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Sep 14 18:54:22 2016 +0200
+
+    Merge pull request #1963 from 3djc/cell-volt-on-a3
+    
+    Cell volt on a4
+
+[33mcommit c11dab442a627905b8f3bd6d9442442aaeb466ce[m
+Merge: 9215861 8f8428a
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Sep 14 18:52:55 2016 +0200
+
+    Merge pull request #1927 from AustinSaintAubin/patch-3
+    
+    FrSky FLVSS Individual Cell Voltages Telemetry
+
+[33mcommit 9215861362a6303e0b71ad7e9e14e4351316cb05[m
+Merge: 6920335 ee35d6f
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Sep 14 18:00:51 2016 +0200
+
+    Merge pull request #2310 from jflyper/fix-i2c-error-count-problem-for-f1
+    
+    Fix i2cErrorCount ignorance on F1 targets
+
+[33mcommit 692033557fe7f195307ea751778e61880e0845c4[m
+Merge: b39fc74 1666eda
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Wed Sep 14 17:54:59 2016 +0200
+
+    Merge branch 'ethomas997-addHorizonTiltEffect'
+
+[33mcommit 1666edad41a12a7f63d818790625e31643fea7f4[m
+Merge: b39fc74 569f0e4
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Wed Sep 14 17:54:30 2016 +0200
+
+    Merge branch 'addHorizonTiltEffect' of https://github.com/ethomas997/cleanflight into ethomas997-addHorizonTiltEffect
+
+[33mcommit b39fc74d22d1231ee8e1e7774762c29ca98d4757[m
+Merge: fc4491c 6931025
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Sep 14 17:39:19 2016 +0200
+
+    Merge pull request #2370 from Bengt-M/codingStyle
+    
+    Coding Style document
+
+[33mcommit fc4491c27dd0fb880e0951ef5ded587dd60be4bd[m
+Merge: 70f13c1 d3fa693
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Sep 14 17:17:46 2016 +0200
+
+    Merge pull request #2358 from QuinnDamerell/quinnd/bash-on-windows
+    
+    Docs: Adding Information About Building on Bash for Windows 10
+
+[33mcommit 70f13c146e89cb8814c37a16f264fe6f2113be73[m
+Merge: 750b491 ba9d007
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Sep 14 17:16:44 2016 +0200
+
+    Merge pull request #2374 from rb1205/documentation_autolevel_modes_explanation
+    
+    Added basic auto-leveled flight modes explanation
+
+[33mcommit 750b491c8305d0901fd383a2559c33abc419b53b[m
+Author: Marcus Ramberg <marcus.ramberg@usit.uio.no>
+Date:   Mon Jun 6 17:59:57 2016 +0200
+
+    Add section about channel forwarding to Mixer documentation
+
+[33mcommit 7283b99908b37000da916dc174e1c18617ac16f2[m
+Merge: 025c3ad 4692551
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Sep 14 17:04:56 2016 +0200
+
+    Merge pull request #2393 from fredmcc/SPortFlightModeFix
+    
+    Fixed SPort telemetry flight mode flag bug
+
+[33mcommit 025c3ad937a4a7290fd8b27263fb2c5d51285cba[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Wed Sep 14 17:03:18 2016 +0200
+
+    Update MSP_BOARD_INFO to expose the kind of board.
+    
+    I have also been thinking that the 'capabilities' and 'sensors' should
+    be moved to MSP_BOARD_INFO.
+    
+    Board now describes the board hardware details and the purpose of the
+    hardware.
+
+[33mcommit 2403182ba445581b2fe2f5b45dfa2ed3ac1ecd68[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 13 20:44:36 2016 +0200
+
+    Bump version to 1.14.0 in preparation for 1.14.0-RC1
+
+[33mcommit 8a17e898a605cfc24e2fd08f33279b853b4d2b24[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 13 20:34:13 2016 +0200
+
+    Use current meter by default if target has one built in.
+
+[33mcommit 1e424897dd6d05ed18caf326a89add3e35839cc4[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Sep 13 20:13:39 2016 +0200
+
+    Fix incorrect use of getVoltage in MSP_VOLTAGE_METERS.  Rename methods
+    to clarify and remove confusion.
+
+[33mcommit 30c11a66b96a270cfa8fd97a30f574284e16d8f3[m
+Merge: a094e3f d213653
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Mon Sep 12 22:05:18 2016 +0200
+
+    Merge pull request #2396 from cleanflight/battery-cleanup
+    
+    First cut of refactored battery/voltage/curent sensor code for #2221
+
+[33mcommit d2136534aafe8492d8f266f1f07dfa9d08872244[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Sep 12 19:32:06 2016 +0200
+
+    Ensure that the array used for test voltages is big enough.  Confusion
+    came from the fact that a voltage meter index is not used - an adc
+    channel index is.
+
+[33mcommit 123e0e7796fc846db5303ac35546637fbb6cfebc[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Sep 12 18:58:45 2016 +0200
+
+    Fix another incorrect user of MAX_VOLTAGE_METERS.  Add mAhDrawn to the
+    MSP_AMPERAGE_METERS response.
+
+[33mcommit 9ce020b4ef9b868ae5838322911a0e35fffbdff6[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Sep 12 18:58:07 2016 +0200
+
+    Reorder amperage sources so that virtual is the default.
+
+[33mcommit a23616a92cb7b62612f526f71929e2290ac762a9[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Sep 12 18:52:25 2016 +0200
+
+    Use local variable to improve readability.
+
+[33mcommit 3859c509e05515b533550517ec2cb9d05a87cf18[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Sep 12 18:48:09 2016 +0200
+
+    Clarify assignment expression by using braces.
+
+[33mcommit b3bf80eab8472fbaddd5c39bffa4cdd760943b2c[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Sep 12 18:45:57 2016 +0200
+
+    Use either virtual or adc amperage meter.
+    
+    It's possible to use them both at the same time but there are a few
+    issues to fix before that can happen.
+    
+    * telemetry needs amperage
+    * msp needs amperage for OSDs
+    * blackbox need amperage
+    
+    There would have to be a way to set the source for each thing and that
+    would likely lead to confusion and complication that most users do need.
+    
+    This also saves a few CPU cycles by only calculating what is needed.
+
+[33mcommit 8554617dbc003be04eb0612ecb5b7d6631d5e63b[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Sep 12 16:23:22 2016 +0200
+
+    More renames of 'current' to 'amperage'.
+    
+    * fixes a weird edit mishap.
+    * fixes incorrect use of MAX_VOLTAGE_METERS when MAX_AMPERAGE_METERS
+    should have been used in the MSP server code.
+
+[33mcommit c0d51ab5e02ad48be1375c75b81bf11812368a08[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Sep 12 16:16:12 2016 +0200
+
+    Rename 'current' to 'amperage'.
+
+[33mcommit 35bd11ee85d5a5172f099d3c35c6524e64cccce1[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Sep 12 16:16:27 2016 +0200
+
+    Fix AlienWiiF3 build.
+
+[33mcommit 62646021f2bc27f8404ba9ac620f5eb0f8f75a89[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Sep 12 15:27:05 2016 +0200
+
+    Fix failing tests after battery/voltage/current refactoring.
+
+[33mcommit 3c3e0abbfe432d590eb0572070d14783dd909eef[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Sep 12 15:01:51 2016 +0200
+
+    Seperate voltage and battery unit test code.
+    
+    The tests are much clearer and focussed now.
+
+[33mcommit 8a97431051290dad090909e55a48fd7acbc2744f[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Sep 12 14:05:07 2016 +0200
+
+    Cleanup various dependency issues.  The OSD build no-longer depends on
+    any FC code.
+
+[33mcommit 09821b8aa3064b5f7bea7c2d45f81faf3753dd40[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Sep 12 14:01:28 2016 +0200
+
+    CJMCU - Enable VBAT on PA4
+
+[33mcommit eb71a5318a1979558070864ea1a29546246da3dd[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Sep 11 23:41:29 2016 +0200
+
+    First cut of refactored battery/voltage/curent sensor code.
+    
+    This:
+    * fixes quite a few dependency issues.
+    * removes some hacks in the OSD 12V/5V code.
+    * allows virtual and adc current meters at the same time.
+    * completely seperates voltage and monitoring from the concept of a
+    battery.  Not all voltages are from a battery.
+    * removes some battery/voltage/current configuration from MSP_BF_CONFIG
+    and MSP_MISC
+    * allows each voltage meter and each current meter to be independantly
+    configured.
+    * allows a single battery to be configured.
+    * moves MSP server configuration into it's own PG (to fix the FIXME with
+    regards to multiWiiCurrentMeter code).
+    
+    The tests WILL fail, they will be updated ASAP - I ran out of time
+    tonight.
+
+[33mcommit a094e3f85ea70b9385a3bab109b20c4899d1c697[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Sep 11 23:35:36 2016 +0200
+
+    Fix failing OSD unit tests.
+
+[33mcommit 627ee6cf76a2b12a0892c94d1a84b275101ece42[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Fri Sep 9 11:48:37 2016 +0200
+
+    OSD - Convert motors rendering to an element.
+
+[33mcommit 7ff8e2d1b828fb4fc59a10854ecdeeb8632d4d3e[m
+Author: proggod <github@prestongarrison.com>
+Date:   Sun Sep 11 12:23:23 2016 -0700
+
+    Update Building in Windows.md
+    
+    wrong version listed
+
+[33mcommit 693102548b7821abeb6328786a8a1cacf0f63f70[m
+Author: Bengt <bengt.mansson@gmail.com>
+Date:   Sat Sep 10 14:58:21 2016 +0200
+
+    Added review comments from @ledvinap
+
+[33mcommit 4692551c01ce1818a18596b95bb992d0f738bfa4[m
+Author: Fred <fred@FredsDebian2.fred.org>
+Date:   Sat Sep 10 12:57:58 2016 +0200
+
+    Fixed SPort telemetry flight mode flag bug
+     Committer: Fredmcc
+    	modified:   src/main/telemetry/smartport.c
+
+[33mcommit ede6e599f767c2387077883816414cafe47158ec[m
+Author: Bengt <bengt.mansson@gmail.com>
+Date:   Thu Sep 8 19:17:23 2016 +0200
+
+    One more addition
+
+[33mcommit a92be9fe040af906108d6cd10bf0e31643d585e9[m
+Author: Bengt <bengt.mansson@gmail.com>
+Date:   Thu Sep 8 19:11:54 2016 +0200
+
+    Updated after review.
+    
+    The review was not exhaustive so it's hard to see if there really was
+    concensus or not.
+    I have used my own judgement from the comments received but please tell
+    if something more should be removed or changed.
+    
+    I would like to add something about indenting switch/case. I think
+    Astyle does it right but a lot of the current code use extra indents.
+    
+    I would like to add something about comments. Along the lines of "less
+    is more but zero is bad".
+    
+    After this, someone should update docs/development/Development.md too.
+    Some statements in that is now in this document and one place should be
+    enough.
+    At least, the old reference to the baseflight coding style should be
+    replaced.
+
+[33mcommit d374eba9747b3c74373b37ceb6a74e9da778a21a[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Sep 8 01:30:29 2016 +0200
+
+    OSD - Add callsign and MSP_PILOT/MSP_SET_PILOT.
+
+[33mcommit c1e0e36937a68b488c6234c04acfaa2dedb08508[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Sep 4 14:54:56 2016 +0200
+
+    OSD - Allow max7456 display memory to be written via DMA.
+    
+    Thanks to @savaga for his implementation in betaflight.
+
+[33mcommit 5b659bd19b786d31fb65a65db55f6c855a4fdf3b[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Sep 4 11:20:16 2016 +0200
+
+    Enable USE_UART1_TX_DMA for appropriate targets.
+
+[33mcommit 1604a71d0b9214de75056e9a803ad352bde4d28d[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Sep 4 11:13:43 2016 +0200
+
+    Allow UART1 to be used without TX via DMA by default.
+
+[33mcommit 0fa6619cce99be190f780caafce12aceef583408[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Sep 3 23:10:18 2016 +0200
+
+    Fix led strip incorrect colors. Closes #2379. Fix by @ledvinap.
+
+[33mcommit 783a9e7ac070b91cc453d07fe63ceeee5a1d0c12[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Sep 3 23:04:28 2016 +0200
+
+    Fix led strip flickering when an LED was configured without a direction.
+    
+    The cause was getDirectionalModeColor() could return NULL resulting in
+    garbage being copied into the color causing them to flash seemingly
+    random colors.
+
+[33mcommit 77222d7639e2c12110bf6fb37b78395d43abb24a[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Fri Sep 2 14:59:44 2016 +0200
+
+    Fix inability to disable OSD elements (operator precedence issue)
+
+[33mcommit d4a1708480bd5f979d4de5a55457afc53c006f56[m
+Merge: 8f04e61 15e6e4a
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Fri Sep 2 02:27:28 2016 +0200
+
+    Merge branch 'martinbudden-cf_mag_init'
+
+[33mcommit 8f04e61b0b8ad54e35bc12472bc71cbb0dbbd332[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Wed Aug 31 13:59:04 2016 +0200
+
+    Remove additional boot delay in boot.c, GPS_BOOT_DELAY adjusted to 2500
+    to compensate.
+
+[33mcommit 472c97ce5efdd53f9d4782a8223c8c1d45f027de[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Mon Aug 29 18:26:36 2016 +0100
+
+    Add initialisation delays to allow GPS to power up
+
+[33mcommit 15e6e4adc6b98780edbc46a013d2496d5b82bedd[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Fri Sep 2 02:26:03 2016 +0200
+
+    Fix double read of mag.
+
+[33mcommit d09b553254cf30d84b1d43075d7812acc6605406[m
+Merge: a5cb0ee 1236235
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Fri Sep 2 02:23:19 2016 +0200
+
+    Merge branch 'cf_mag_init' of https://github.com/martinbudden/cleanflight into martinbudden-cf_mag_init
+
+[33mcommit ba9d0076877eaf38730e0d25d09cfbc2e4e31e6e[m
+Author: rb1205 <contact@belloli.net>
+Date:   Thu Sep 1 10:55:54 2016 +0200
+
+    fixed typos
+
+[33mcommit 1236235d9586ffd6870e4fcaa935f61d97e0fa7a[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Wed Aug 31 14:49:19 2016 +0100
+
+    Removed zeroing magData in compass drivers
+
+[33mcommit a5cb0ee0855b41ad127fd631fd27cdab465b3ceb[m
+Merge: cc736bc e77405a
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Wed Aug 31 14:00:02 2016 +0200
+
+    Merge branch 'martinbudden-cf_gps_init_delay'
+
+[33mcommit e77405afda872cc99a5ac1e9199282eca4e91f9f[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Wed Aug 31 13:59:04 2016 +0200
+
+    Remove additional boot delay in boot.c, GPS_BOOT_DELAY adjusted to 2500
+    to compensate.
+
+[33mcommit 0713ada5b2cc73ff9b88883f676f08d779c16dac[m
+Author: rb1205 <contact@belloli.net>
+Date:   Mon Aug 29 23:24:33 2016 +0200
+
+    Update Modes.md
+
+[33mcommit fbdca8fd5099673f8d636626a11c29bc9afbb53f[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Mon Aug 29 18:26:36 2016 +0100
+
+    Add initialisation delays to allow GPS to power up
+
+[33mcommit 740a2a0722fcd997192c0e3c0d9bafa52ba50c15[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Mon Aug 29 16:29:06 2016 +0100
+
+    Make mag init function bool and act on return value
+
+[33mcommit bedf1e1be55a956c9e7f87d77987df3e689b09b7[m
+Author: rb1205 <contact@belloli.net>
+Date:   Mon Aug 29 17:07:59 2016 +0200
+
+    Added basic auto-leveled flight modes explanation
+
+[33mcommit cc736bc1e91b56ea6b588e686e200c930b87c1a5[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Aug 29 12:35:02 2016 +0200
+
+    Prevent bottom aligned PAL items appearing off-screen when switching to
+    NTSC
+    
+    This caused a hard-fault to occur.
+
+[33mcommit a198077530be82315c59c2d4efda4df8e83ed3c3[m
+Author: proggod <github@prestongarrison.com>
+Date:   Sat Aug 27 08:02:47 2016 -0700
+
+    Update Building in Windows.md
+
+[33mcommit c91d480ff5806c829f72a8c93c9309110fdd4851[m
+Author: proggod <github@prestongarrison.com>
+Date:   Sat Aug 27 07:54:41 2016 -0700
+
+    Update Building in Windows.md
+
+[33mcommit 35bda3832d7e4799ea3b3b69db77bcce3d3a4b7b[m
+Author: proggod <github@prestongarrison.com>
+Date:   Sat Aug 27 07:51:38 2016 -0700
+
+    Update Building in Windows.md
+
+[33mcommit 951dd6290ec8dc2dbfd319981d175d6badc5523f[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Aug 27 13:53:28 2016 +0200
+
+    Support uploading of osd font characters via MSP.
+    
+    Note: there is still no dependancy on specific OSD video drivers in the msp_server_osd.c or osd.c code, even with this change.
+
+[33mcommit e270cca41ab2ea92cde0cbb964e7a2e44e245115[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Aug 27 13:14:55 2016 +0200
+
+    Avoid wasting cycles when disarmed by indicated if msp port
+    re-allocation is required when telemetry state changes.
+    
+    Thanks to jflyper for the spot, closes #2335
+
+[33mcommit e3cade331525cfa91f121a51c64a511b0b2e3b74[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Aug 27 04:21:18 2016 +0200
+
+    Provide updated MSP and OSD element rendering to support configurator
+    changes.
+
+[33mcommit 7ac753b85124e480c96f4929b9043625dd796a30[m
+Author: Bengt <bengt.mansson@gmail.com>
+Date:   Thu Aug 25 23:31:27 2016 +0200
+
+    Coding Style document
+    
+    Replacing the old Baseflight version, adding new input and some
+    structure.
+    Became longer than expected...
+
+[33mcommit 93166267300904a850226d6c05c9e76e595d57cd[m
+Merge: 37b50a5 9a21941
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Fri Aug 26 03:10:37 2016 +0200
+
+    Merge pull request #2352 from cleanflight/enable-cache
+    
+    Enable ccache
+
+[33mcommit 9a21941c5c9a4c66522e23ceac73624dd71a0fd6[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Wed Aug 24 19:06:56 2016 +0200
+
+    Update travis ccache settings as per documentation.
+    
+    https://docs.travis-ci.com/user/caching/#ccache-cache
+
+[33mcommit 37b50a56c60179f3af8b96c24a6b557065f735c0[m
+Author: Fred <fred@FredsDebian2.fred.org>
+Date:   Mon Aug 22 18:34:13 2016 +0200
+
+    Updated code style format
+     Committer: Fredmcc
+     On branch SPortAltFix
+     Changes to be committed:
+    	modified:   src/main/sensors/barometer.c
+
+[33mcommit b64828c8bcc96e35e8c8ff6020d960c116c46d81[m
+Author: Fred <fred@FredsDebian2.fred.org>
+Date:   Sun Aug 21 19:46:47 2016 +0200
+
+    Format update
+
+[33mcommit b484216da725d6a99cf7f6a2ababe5ea4c0724c6[m
+Author: Fred <fred@FredsDebian2.fred.org>
+Date:   Sun Aug 21 19:41:56 2016 +0200
+
+    Added check for isBaroCalibrationComplete() before baroCalculateAltitude(void)
+    returns a BaroAlt reading.
+    
+     Committer: Fredmcc
+     Changes to be committed:
+    	modified:   src/main/sensors/barometer.c
+
+[33mcommit 61beeee0bf42f607bae1709337860c5a28cb5ddd[m
+Merge: 39d05ac 25dcd98
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Aug 24 18:58:22 2016 +0200
+
+    Merge pull request #2362 from cleanflight/spracingf3evo-softserial
+    
+    Add softserial to SP Racing F3 EVO (via ESC outputs 5-8)
+
+[33mcommit 39d05ac0d0aebe2721eff0ea5faf0ed535e89fc6[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Wed Aug 24 13:04:00 2016 +0200
+
+    Fix SPRACINGF1OSD build - flashchip config was only defined in the FC
+    code.
+
+[33mcommit 5e749f8d73ae41592261b3ecf673b866a3f474ef[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Wed Aug 24 01:48:53 2016 +0200
+
+    Remove unused NO_CUSTOM_FLASHCHIP from ALIENFLIGHTF1.  See
+    fa6b014c17d7a87dcc7682b4850b0d622052c858
+
+[33mcommit fa6b014c17d7a87dcc7682b4850b0d622052c858[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Tue Aug 23 20:29:24 2016 +0200
+
+    Allow CUSTOM_FLASHCHIP to be specified on targets that allow the user to solder on their own flash chip.
+
+[33mcommit 5b6bc039858894d249d289304bcc6cb795071dae[m
+Author: jflyper <shinoda@jaist.ac.jp>
+Date:   Thu Jun 16 21:19:20 2016 +0900
+
+    NO_CUSTOM_FLASHCHIP for ALIENFLIGHTF1
+
+[33mcommit cf75e0e7445fceb5548ea5d22392579f9bf5d09b[m
+Author: jflyper <shinoda@jaist.ac.jp>
+Date:   Sat Jun 4 22:24:27 2016 +0900
+
+    Updated MSP command ids.
+
+[33mcommit edd265eeb4970504f276a865e7f0d55eb3c6100f[m
+Author: jflyper <shinoda@jaist.ac.jp>
+Date:   Thu Jun 2 16:17:48 2016 +0900
+
+    Write back hard coded params to pg
+
+[33mcommit bffdb84997bbfb7a1c16e97dcd156e9bd95a24d3[m
+Author: jflyper <shinoda@jaist.ac.jp>
+Date:   Thu Jun 2 15:58:39 2016 +0900
+
+    New pg PG_DRIVER_FLASHCHIP_CONFIG
+
+[33mcommit 6f6620f615c1bbb3f99d917a3d63a923e691945a[m
+Author: jflyper <shinoda@jaist.ac.jp>
+Date:   Fri May 20 00:21:16 2016 +0900
+
+    Make it an option & call them flashchips
+
+[33mcommit 58a07a21a902212078b525e7f199a9ceb5b29889[m
+Author: jflyper <shinoda@jaist.ac.jp>
+Date:   Tue May 17 18:47:34 2016 +0900
+
+    First working version
+
+[33mcommit 300a151d38e96264f93a6fc05e036fc2343bb2af[m
+Merge: 387df2d 4a12716
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Tue Aug 23 20:05:18 2016 +0200
+
+    Merge pull request #2248 from mojocorp/mpu6500-temperature-reading
+    
+    accgyo_mpu6500: add temperature reading.
+
+[33mcommit 387df2d34ac140848c288186515599ccadd3f354[m
+Merge: 199ab88 b9d48ce
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Tue Aug 23 20:02:34 2016 +0200
+
+    Merge branch 'martinbudden-issue1868_sonar_pins'
+
+[33mcommit b9d48cee9bef1cf90a80ccb3cf1c365b20dd6c2d[m
+Merge: 199ab88 44f3c18
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Tue Aug 23 20:01:23 2016 +0200
+
+    Merge branch 'issue1868_sonar_pins' of https://github.com/martinbudden/cleanflight into martinbudden-issue1868_sonar_pins
+
+[33mcommit 25dcd98c23637b50c86ad9688d48a49eb9983b9d[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Aug 21 02:07:06 2016 +0200
+
+    Add softserial to SP Racing F3 EVO (ESC outputs 5-8)
+
+[33mcommit 199ab88358e92781d79f0a27cdcc360e57f507c8[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Aug 23 19:15:59 2016 +0200
+
+    Allow OSD elements to be bottom or top justified.  Provide a default
+    list of OSD elements.  The OSD element list is now configurable instead
+    of hard coded.  Change the default video mode to AUTO (was NTSC).
+    
+    Future commits will allow OSD the elements, flags and position to be
+    configured via MSP.
+
+[33mcommit 3b2d41fd8a6c04c0b5c6ad23bd14699a2c499a9d[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Aug 23 01:46:20 2016 +0200
+
+    Fix travis unittest warning.
+    
+    The warning didn't show up locally.
+
+[33mcommit 569f0e46ccdc7c72601b098e8908b685ff1dcfde[m
+Author: E Thomas <ethomas997@etsphere.com>
+Date:   Tue Jun 28 22:43:03 2016 -0400
+
+    Added horizon_tilt_effect command
+    
+    and horizon_tilt_mode command.
+    Using new 'calcHorizonLevelStrength()' function.
+    Changed 'd_level' (D8[PIDLEVEL]) default from 100 to 75.
+
+[33mcommit 928f9116bb56df4f77bec962f4331d31cfdf1112[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Aug 21 11:41:43 2016 +0200
+
+    Add 'armed duration' osd element.  Relocate 'on duration' element.
+    
+    Armed duration element is reset upon arming and ticks up when armed.
+
+[33mcommit e2ae0250986c22a6f1899fbac0d9516cdbaeefd9[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Aug 21 11:14:30 2016 +0200
+
+    Convert old rssi code to element and data providers.
+
+[33mcommit dc286bde506136afb512fe05b103603a3c4b8a32[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Aug 21 11:00:55 2016 +0200
+
+    Convert old flight mode code to element and data providers. De-duplicate
+    voltage element rendering code.
+
+[33mcommit cdf6d6bd9e52cd30fb30b0fbd6fb3c51eb0d8581[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Aug 21 02:00:40 2016 +0200
+
+    Convert old 5v and fc vbat code to element and data providers.
+
+[33mcommit 97a399de475f7e197dad35fb580d93184e89e4fd[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Aug 21 01:19:17 2016 +0200
+
+    Convert old amperage code to an element and data provider.
+
+[33mcommit 0ea220cb086723cb68ffc24c24cecf51b1b08c38[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Aug 21 00:43:27 2016 +0200
+
+    Convert old mAh drawn code to an element and data provider.  Fix some
+    warnings.
+
+[33mcommit dfe915618719adf546591e70189314deea57df7d[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Aug 21 00:13:49 2016 +0200
+
+    Display the 'on time' on the OSD.  This introduces the concept of
+    elements and which are implemented by element renderers and data
+    providers.
+    
+    The abstraction is needed since standalone OSDs will use one set of data
+    providers and an FC with integrated OSD will use a different set, but in
+    both cases the renderers and configuration is identical.
+
+[33mcommit 9374b8f7512fe1c0d0c0c6b44fa2ca194c195771[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Aug 20 22:27:49 2016 +0200
+
+    Move OSD screen related code and add a unit test for osdClearScreen
+
+[33mcommit 0b7bba7eebfe52543f946f3d3751df66dd82997c[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Aug 20 21:57:11 2016 +0200
+
+    Add first OSD screen unit test.
+
+[33mcommit fc53f5c3026503855b15d70b5288a986952a3b48[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Aug 20 19:13:27 2016 +0200
+
+    Remove/disable some OSD debug code
+
+[33mcommit ad9c575fa81bcc3f3ac8eded087113191dcdf8b7[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Aug 20 19:04:20 2016 +0200
+
+    Finish vsync wait code.
+
+[33mcommit 634f694455b96ecb2e0bc7b0add18aadd61f23d3[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Aug 20 18:42:34 2016 +0200
+
+    Remove hard-coded max7456 EXTI configuration from osd_max7456.c (again,
+    it was done before the EXTI2 PR which reverted the changes).
+
+[33mcommit b636d2ef76775f220755121e5fac66f33ac2d954[m
+Merge: 8e3d484 214777b
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Fri Aug 19 20:34:55 2016 +0200
+
+    Merge pull request #2357 from QuinnDamerell/quinnd/ubuntu-doc-update
+    
+    Docs: Ubuntu - Updating the Repo Url Because the old Url is dead.
+
+[33mcommit 8e3d4842ed25c4245aae635b107960cfbba9449e[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Fri Aug 19 20:33:35 2016 +0200
+
+    Add MSP_OSD_VIDEO_STATUS command.
+
+[33mcommit 9380e85f38f2e0b9f7de82e7dbf6d09ec973e967[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Fri Aug 19 18:30:11 2016 +0200
+
+    Balance the tasks a bit better.  Hardware watchdog was not being called
+    frequently enough and MSP was lagging.
+
+[33mcommit 182286e9273bac95e1800d61d4523266b549d075[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Fri Aug 19 18:23:13 2016 +0200
+
+    Support automatic video mode switching.
+    
+    The following cases were handled:
+    1) video configured to NTSC but PAL camera connected.
+    2) video configured to PAL but NTSC camera connected.
+    3) video configured to AUTO, powered without camera, PAL or NTSC camera
+    connected later.
+    4) change between NTSC and PAL cameras while powered.
+
+[33mcommit e1ef91c0bc56b468fb2012d212a5f02524972ac2[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Fri Aug 19 02:58:00 2016 +0200
+
+    Temporary disable softserial on CC3D due to code size issues.
+
+[33mcommit 240200816274a2c332d58cff1a6d72c660360f8b[m
+Merge: 5956688 fe34033
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Fri Aug 19 02:40:53 2016 +0200
+
+    Merge pull request #2355 from cleanflight/gcc54
+    
+    Try GCC 5.4 on travis.
+
+[33mcommit d3fa693c95ed2d12026ed7038509c10e0893571a[m
+Author: Quinn Damerell <quinnd@outlook.com>
+Date:   Thu Aug 18 15:11:52 2016 -0700
+
+    Updating the wording some.
+
+[33mcommit b7fd81cdf3586ffae889b6aae308e666352e41f1[m
+Author: Quinn Damerell <quinnd@outlook.com>
+Date:   Thu Aug 18 15:06:59 2016 -0700
+
+    Adding information about how to build with Bash on Windows.
+
+[33mcommit 214777b11d5a00f70df512c8dba37c27c86e50b0[m
+Author: Quinn Damerell <quinnd@outlook.com>
+Date:   Thu Aug 18 14:49:09 2016 -0700
+
+    Updating the repo url as the other is now dead.
+
+[33mcommit fe340337784d56b47c7f3b15ceb276c8fa715bba[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Aug 18 20:29:34 2016 +0200
+
+    Try GCC 5.4 on travis.
+
+[33mcommit 3172fa20f71a89ccfbabd040f74ad65ce176d8ce[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Aug 15 03:00:43 2016 +0200
+
+    Enable for the travis build.
+
+[33mcommit 2982438f29e97da7b5974e15bf13ef742ce01011[m
+Author: Anders Hoglund <andwho@gmail.com>
+Date:   Fri Jul 15 14:05:38 2016 +0100
+
+    Fix for ccache detection problem on cygwin.
+
+[33mcommit 5decbaa44d6018b53a6b502d4b0348389c50e4d6[m
+Author: Anders Hoglund <andwho@gmail.com>
+Date:   Thu Jul 14 10:33:05 2016 +0100
+
+    Use ccache if it is installed on the system.
+
+[33mcommit 595668867d61e4dcd488542684ccd39f6b843686[m
+Merge: 91debad b9c2592
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Thu Aug 11 12:32:34 2016 +0200
+
+    Merge branch 'SteveAmor-more_reliable_baro_detection'
+
+[33mcommit b9c2592d3f45d2cba193a4b4d1cc4f7dd53c879f[m
+Merge: 91debad 11eac4e
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Thu Aug 11 12:32:10 2016 +0200
+
+    Merge branch 'more_reliable_baro_detection' of
+    https://github.com/SteveAmor/cleanflight into
+    SteveAmor-more_reliable_baro_detection
+    
+    # Conflicts:
+    #	src/main/sensors/initialisation.c
+
+[33mcommit 91debadaba2931a725f61317013251e499aa47e7[m
+Merge: c592767 8a1a890
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Wed Aug 10 21:37:48 2016 +0200
+
+    Merge branch 'ledvinap-feature-exti-2'
+
+[33mcommit 8a1a890aa7bc37a05ca3417c2468257a6cc4145c[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Wed Aug 10 21:28:58 2016 +0200
+
+    fix missing exti initialisation calls for OSD.
+
+[33mcommit 8c60631c40013aa2cee16da053e9be950cbf073a[m
+Merge: c592767 d57612a
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Wed Aug 10 21:37:14 2016 +0200
+
+    Merge branch 'feature-exti-2' of https://github.com/ledvinap/cleanflight into ledvinap-feature-exti-2
+
+[33mcommit c592767e57eb16627faa34014e87e46838bb07d3[m
+Merge: 1b4f35c 3e21097
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Thu Aug 4 23:35:00 2016 +0200
+
+    Merge pull request #2327 from martinbudden/msp_conflict_fix2
+    
+    Fixed MSP conflicts with betaflight. Requires corresponding change in configurator
+
+[33mcommit 4cf57fe32a08831442099200bd1727db8628a032[m
+Author: andrew-milovidov <andrew.milovidov@gmail.com>
+Date:   Thu Aug 4 10:49:36 2016 +0300
+
+    ibusFramePosition update
+    
+    ibusFramePosition was not set to zero after finishing frame
+
+[33mcommit 1b4f35c37454a3dff3cab5d218b55163472ca3fa[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Aug 1 20:07:13 2016 +0200
+
+    fix image filename casing.
+
+[33mcommit 719c0f2ec3e2f6c73738e7730256de9efef1e6d6[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Aug 1 19:53:51 2016 +0200
+
+    fix missing documentation images
+
+[33mcommit 46ec7cea2baeac1bddae1ca17eb7e0451f08b95c[m
+Merge: bf57e62 550c055
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Thu Jul 28 18:07:27 2016 +0200
+
+    Merge pull request #2334 from richard-scott/patch-1
+    
+    Fix link
+
+[33mcommit 550c055928ccd32f5241412aec33e824176e1813[m
+Author: Richard Scott <github@pointb.co.uk>
+Date:   Thu Jul 28 14:32:12 2016 +0100
+
+    Update Rx.md
+    
+    Updated URL for "Lemon Rx DSMX Compatible PPM 8-Channel Receiver + Lemon DSMX Compatible Satellite with Failsafe"
+
+[33mcommit bf57e62b0fcca548879c3e3e75d42ce774b18bf4[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Tue Jul 26 16:19:06 2016 +0200
+
+    Fix doc table
+
+[33mcommit 3e21097679f9fb173c5757488f83807443a7c2ae[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Mon Jul 25 09:20:31 2016 +0100
+
+    Fixed MSP conflicts with betaflight. Requires corresponding change in configurator
+
+[33mcommit e57790cc048bf09238870136de1b6595a87904b8[m
+Merge: 6253739 859260a
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Sat Jul 23 21:04:50 2016 +0200
+
+    Merge branch 'gaelj-LED-battery'
+
+[33mcommit 859260a501910538ff3e5b781f80b33272b8f2b1[m
+Merge: 6253739 c3b3949
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Sat Jul 23 21:03:51 2016 +0200
+
+    Merge branch 'LED-battery' of https://github.com/gaelj/cleanflight into gaelj-LED-battery
+
+[33mcommit 4a127166043b5a4e38da6002034412239be74973[m
+Author: Morgan Leborgne <leborgne@zib.de>
+Date:   Sun Jul 3 22:22:25 2016 +0200
+
+    accgyo_mpu6500: add temperature reading.
+
+[33mcommit 62537392123242ab7524143eb77eb8bdd42f21e7[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Fri Jul 22 00:15:03 2016 +0200
+
+    Update SRXL missing dma.h include, caused by clash between PR #2287 and
+    #2253
+
+[33mcommit abf3470a76ea7e140280b1d735a104bb88c32f86[m
+Merge: b3e1719 cbc4b2e
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Thu Jul 21 17:07:04 2016 +0200
+
+    Merge pull request #2225 from 4712/blheli4wayif_timing_improvement
+    
+    Blheli4wayif timing improvement
+
+[33mcommit b3e171952fa9c971914416c5daf7e2fadb246cfb[m
+Merge: 1b0c00d 8256234
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Thu Jul 21 17:05:35 2016 +0200
+
+    Merge branch 'mojocorp-master'
+
+[33mcommit 8256234edb626a312a15a0f148d8c85a15bcb7a5[m
+Merge: 1b0c00d 45adf54
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Thu Jul 21 17:05:21 2016 +0200
+
+    Merge branch 'master' of https://github.com/mojocorp/cleanflight into mojocorp-master
+
+[33mcommit 1b0c00dee3f8bfe1d3fc42a69cc136c5429e2b31[m
+Merge: 4ed334c b5287cb
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Thu Jul 21 16:58:56 2016 +0200
+
+    Merge branch 'inbilla-issues/PR_2243_SPRacingF3Evo_ServoSupport'
+
+[33mcommit b5287cb7ad06d10c1fb8783221e0598bcdf99b9b[m
+Merge: 4ed334c 3c4aa7a
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Thu Jul 21 16:58:36 2016 +0200
+
+    Merge branch 'issues/PR_2243_SPRacingF3Evo_ServoSupport' of https://github.com/inbilla/cleanflight into inbilla-issues/PR_2243_SPRacingF3Evo_ServoSupport
+
+[33mcommit 4ed334cae829bcffb76c53f824d7f199923d3ac1[m
+Merge: 1432323 dc54316
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Thu Jul 21 16:56:32 2016 +0200
+
+    Merge pull request #2253 from saperlot/SRXL_V2
+    
+    adding support for Multiplex SRXL V2
+
+[33mcommit 1432323272f14ed5b960b7d6b1fef71511a36c07[m
+Merge: 2c4f65e 46370df
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Thu Jul 21 16:37:05 2016 +0200
+
+    Merge pull request #2313 from martinbudden/msp_align
+    
+    Updated MSP protocol with betaflight and iNav commands
+
+[33mcommit 2c4f65e01a10388d76ec319e6133cb6328ea8b8e[m
+Merge: 2ec2be4 f7205b8
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Thu Jul 21 16:27:19 2016 +0200
+
+    Merge pull request #2314 from ledvinap/doc-mixer
+    
+    Update Mixed docs to match source code
+
+[33mcommit 2ec2be46a2dfebb7aa2300afd57ccbc402f9b1cb[m
+Merge: de21daf 426dd0c
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Thu Jul 21 16:21:26 2016 +0200
+
+    Merge pull request #2321 from jflyper/issue-2319-TASK_GPS-at-100Hz
+    
+    Fix for issue 2319 run TASK_GPS at 100Hz
+
+[33mcommit 426dd0c6d8b0d88c5e3beaa38e2591f5e36a1957[m
+Author: jflyper <shinoda@jaist.ac.jp>
+Date:   Thu Jul 21 22:11:51 2016 +0900
+
+    Fix for issue 2319 run TASK_GSP at 100Hz
+    
+    Per #2319
+
+[33mcommit f7205b80b937186f93f1de01c49667df5ca16452[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Thu Jul 21 14:54:07 2016 +0200
+
+    fixup! Update Mixed docs to match source code
+
+[33mcommit c3b39492aa711c8e468d893dc2a09ee40c761c3f[m
+Author: gaelj <gaeljames@gmail.com>
+Date:   Wed Jul 20 20:48:24 2016 +0200
+
+    Warnings: blink to black instead of function color
+
+[33mcommit a8ddae9bb6c58916942d7a8d66728ec4a42fd420[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Wed Jul 20 11:44:03 2016 +0200
+
+    fixup! cleanup formating
+
+[33mcommit 7823dbd15ff9f872864a88e63503c1d6b16a5c32[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Wed Jul 20 11:40:55 2016 +0200
+
+    cleanup formating
+
+[33mcommit c620af80dd87a20cef625c44a1baf9d74664b96e[m
+Author: gaelj <gaeljames@gmail.com>
+Date:   Sun Jun 26 20:51:13 2016 +0200
+
+    MSP_LEDSTRIP_MODECOLOR - Use BF compatible ID
+
+[33mcommit 99bf599c69d8097483967757ef384eb752359224[m
+Author: gaelj <gaeljames@gmail.com>
+Date:   Sun Jun 26 15:08:40 2016 +0200
+
+    Fix typo in reevaluateLedConfig
+
+[33mcommit 23a60ccddac95fda507d23b2fbf06ea00de9f3af[m
+Author: gaelj <gaeljames@gmail.com>
+Date:   Sun Jun 26 02:41:18 2016 +0200
+
+    Fix freeze if LED 0 is color only and in pos 0,0
+
+[33mcommit a3ad25182d520b09357cdd14f588238805feafb2[m
+Author: gael <gaeljames@gmail.com>
+Date:   Sat May 21 02:44:26 2016 +0200
+
+    New LED function: L assigns hue to battery level
+    MSP: use uint32_t for LED flags buffer
+    Improved LED battery behaviour
+    
+    - Lights the current LED green, orange or red depending on the battery
+    status. When battery status is warning or critical, the LED will start
+    blinking at a speed relative to the remaining battery percentage: the
+    lower the battery, the faster the blinking.
+    
+    - Colors are configurable via cli command mode_color
+    
+    LED strip rework
+    
+    - reduce LED config size to 1x uint32_t per LED
+    - update MSP MSP_LED_STRIP_CONFIG
+    - blink moved from functions top overlays
+    - rssi moved from overlays to function (now works similar to battery)
+    - new LED strip overlays: larson scanner, blink always, blink on landing
+    - LED strip optimizations  & cleanup
+    - Increment MSP proptocol to 1.20
+
+[33mcommit 85f955fbe6e4b6d2e0dd10f164a5bc022c4b9218[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Tue Jul 19 17:52:25 2016 +0200
+
+    Update Mixed docs to match source code
+
+[33mcommit ee35d6f87d35980ee47dd09072c4143589bda55d[m
+Author: jflyper <shinoda@jaist.ac.jp>
+Date:   Tue Jul 19 20:20:30 2016 +0900
+
+    Return code optimization
+
+[33mcommit 46370dfc9dbcc41eec5d8a38d26b2afb2014ab8f[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Tue Jul 19 09:28:50 2016 +0100
+
+    Updated MSP protocol with betaflight and iNav commands
+
+[33mcommit de21daf03f4d0d6de19530dd630c2c1447351999[m
+Merge: 39228b7 92a9e63
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Tue Jul 19 08:17:14 2016 +0100
+
+    Merge pull request #2311 from martinbudden/pid_delta_fix
+    
+    Moved deltaMethod to end of PG. Use zero for measurement value
+
+[33mcommit 74891b3d649b5dc90ef3143c45a33b02473fdd08[m
+Author: jflyper <shinoda@jaist.ac.jp>
+Date:   Tue Jul 19 13:05:07 2016 +0900
+
+    Force travis
+
+[33mcommit 39228b762ceb36ecb4fb6d1b62f226962d862671[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Jul 18 22:15:50 2016 +0200
+
+    Fix RCEXPLORERF3 build due to recent DMA changes in #2287
+
+[33mcommit 92a9e63e7d19023020d6eba1650ee5a151ad0190[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Mon Jul 18 18:09:34 2016 +0100
+
+    Moved deltaMethod to end of PG. Use zero for measurement
+
+[33mcommit a5a488de9969c5dcc32026883d79447855cde108[m
+Author: jflyper <shinoda@jaist.ac.jp>
+Date:   Tue Jul 19 01:00:41 2016 +0900
+
+    Fix i2cErrorCount ignorance for F1 targets
+
+[33mcommit d57612ad7dfb764e79bd73e7539fd92b5bea6cd1[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Mon Jul 18 12:33:41 2016 +0200
+
+    Fix RCEXPLORERF3
+
+[33mcommit 36e993662e3f4bf14cbb81511d6ac5dc64b6a5e0[m
+Merge: fda0258 1ea7608
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Mon Jul 18 11:45:37 2016 +0200
+
+    Merge 'upstream/master' into feature-exti-2
+    
+    Conflicts:
+    	src/main/target/SPRACINGF1OSD/target.h
+
+[33mcommit 1ea7608ac2802752fb545b98ba8f76f9b82b9db3[m
+Merge: 99db777 e507117
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Mon Jul 18 11:23:49 2016 +0200
+
+    Merge pull request #2287 from savaga/cleanflight-dma-redesign
+    
+    Rework dma driver
+
+[33mcommit fda025873b7cd968715fa2b591f19e167ca4dc4e[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Mon Jul 18 11:22:43 2016 +0200
+
+    Modify OSD to use EXTI
+
+[33mcommit 4a11c66ca724b891b2acd1406c35b565ee0962f4[m
+Merge: e3e68f6 2507b90
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Mon Jul 18 11:22:07 2016 +0200
+
+    Merge 'upstream/master' into feature-exti-2
+    
+    Conflicts:
+    	Makefile
+    	src/main/drivers/nvic.h
+    	src/main/target/NAZE32PRO/target.h
+
+[33mcommit 99db7775feae59055ef40f8d9616607d38a6a2ea[m
+Merge: 84b3afd 5baa61f
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Mon Jul 18 07:27:30 2016 +0100
+
+    Merge pull request #2307 from martinbudden/pid_delta_from_error
+    
+    Added pid delta from error calculation
+
+[33mcommit 5baa61feafdc971ab4271697f7049772da927df9[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Thu Jul 14 22:45:46 2016 +0100
+
+    Added pid delta from error calculation
+
+[33mcommit 84b3afddabce4e67320da88763ade0db64a8fe45[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Jul 17 02:09:45 2016 +0200
+
+    Fix unit tests.
+    
+    Unit tests don't currently use ADC_RSSI.
+
+[33mcommit e5071170447a3ee32f05e729aabfe4ce1e43a8f4[m
+Author: Evgeny Sychov <evgeny.sychov@gmail.com>
+Date:   Sat Jul 16 12:34:37 2016 -0700
+
+    Fix unit tests
+
+[33mcommit 3d1006f7b77233049e1a98642fdfc567a64600ee[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Jul 16 19:26:56 2016 +0200
+
+    RCEXPLORERF3 - Update ADC mapping, see
+    1be216bedd0d1816d60ccb9d8e0954646fee5fcc
+
+[33mcommit a5bd139fc4d363cb3f00fe633b4361d2e06303d1[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Jul 16 19:24:24 2016 +0200
+
+    RCEXPLORERF3 - Update fake_travis_build script.
+
+[33mcommit 558ac6e253a308f1e97647ea31bb730f234149e0[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Jul 16 19:19:55 2016 +0200
+
+    Fix LUX race target identifier.  All must be 4 characters for stats
+    reporting reasons.
+
+[33mcommit 4356930bee5af1a70c840cfcdc2486ba400e0a7f[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Jul 16 19:19:14 2016 +0200
+
+    Rename F3FCRACING to RCEXPLORERF3.  Target name was too vague.
+    
+    Also fixed the board identifier, 4 characters max! (for stat reporting
+    reasons).
+
+[33mcommit 17fdace579b8c0b86408535b1984a36e91dc0baa[m
+Merge: 1be216b dc16023
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Sat Jul 16 19:06:54 2016 +0200
+
+    Merge pull request #2283 from lkaino/F3FC_RACING
+    
+    New target: F3FC Racing
+
+[33mcommit 1be216bedd0d1816d60ccb9d8e0954646fee5fcc[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Jul 16 18:23:57 2016 +0200
+
+    Cleanup ADC mapping.
+
+[33mcommit 39d731a5da405a564203279c5bf38adefb2feb9e[m
+Merge: 2507b90 2434a8d
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Sat Jul 16 16:09:25 2016 +0200
+
+    Merge pull request #2298 from vojcio/patch-1
+    
+    Update flashing procedure for CC3D
+
+[33mcommit acc5e9551a821fb97d8ff603b564ea64f3be15a9[m
+Author: Evgeny Sychov <evgeny.sychov@gmail.com>
+Date:   Fri Jul 15 13:56:04 2016 -0700
+
+    few fixes in dma driver desigh
+
+[33mcommit 047b3d02cb44e9f67a4e50421d7fc26c1e9cca6c[m
+Author: Evgeny Sychov <evgeny.sychov@gmail.com>
+Date:   Fri Jul 15 00:47:50 2016 -0700
+
+    Use DMA handler object instead of just handler pointer and userParam
+
+[33mcommit 2434a8d7fbacf8a22cba8c4da274f96929d74fa8[m
+Author: Wojciech <wojciech@krysmann.pl>
+Date:   Thu Jul 14 08:42:17 2016 +0200
+
+    Update flashing procedure for CC3D
+    
+    Only single binary image mode can be used since version 1.11.0, added references to prior releases for "OpenPilot Bootloader compatible image mode"
+
+[33mcommit 2507b90a2827496fd9aae04624bc2a8aabbb64f3[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Wed Jul 13 22:12:40 2016 +0200
+
+    Smartport - Cleanup usage of old autotune mode flag.  Use OR operator
+    instead of + operator to avoid issues if GTUNE and PASSTHOUGH are
+    enabled at the same time.
+
+[33mcommit f41c29355765985a163cd2f3a591c56d5e5fe0ea[m
+Merge: 41f2d70 7bfa375
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Jul 13 21:54:56 2016 +0200
+
+    Merge pull request #2300 from gaelj/MSP_readd_raw_mag_decl
+    
+    don't scale mag_declination by 10 (readd)
+
+[33mcommit 7bfa37560eec44e59fba43664774fec8fdefb76f[m
+Author: gaelj <gaeljames@gmail.com>
+Date:   Tue Jul 12 20:46:17 2016 +0200
+
+    don't scale mag_declination by 10 (readd)
+
+[33mcommit c60ebc5ebd0795e7357ebf04309bdf01ea64f319[m
+Author: Wojciech <wojciech@krysmann.pl>
+Date:   Mon Jul 11 23:35:41 2016 +0200
+
+    Update flashing procedure
+    
+    Only single binary image mode can be used since version 1.11.0
+
+[33mcommit 41f2d70e66d6ba6d9f905f6d3fda196ec9cd96bc[m
+Merge: 07f9d59 0f12fe2
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Mon Jul 11 16:12:48 2016 +0200
+
+    Merge pull request #2297 from jflyper/led1-on-incorrect-gpio-port
+    
+    fix LED1_PERIPHERAL on SPRACINGF3OSD
+
+[33mcommit 0f12fe26c19457810afea0d2d16be25c93dc40b2[m
+Author: jflyper <shinoda@jaist.ac.jp>
+Date:   Mon Jul 11 21:36:05 2016 +0900
+
+    B is most likely
+
+[33mcommit a07eb7fb37f3bd4be8082cc54260ef2dbac5b21e[m
+Author: Konstantin Sharlaimov (DigitalEntity) <konstantin.sharlaimov@gmail.com>
+Date:   Sat May 7 09:03:50 2016 +1000
+
+    MAVLink documentation update
+
+[33mcommit c8795566812ce9ff69a9aa112701943a26862e3c[m
+Author: Konstantin Sharlaimov (DigitalEntity) <konstantin.sharlaimov@gmail.com>
+Date:   Sat May 7 08:55:05 2016 +1000
+
+    Remove platform-specific parts of mavlink library. Inclide mavlink code with -Wpedantic ignored
+
+[33mcommit 07f9d592929f324ccfdce3cef35ef054edc51bdb[m
+Merge: 884ac0b f91737c
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Sat Jul 9 08:10:05 2016 +0100
+
+    Merge pull request #2291 from jflyper/fix-typo-in-openSerialPort
+    
+    Fix a typo in openSerialPort()
+
+[33mcommit f91737c6f60278cfca14bf31d39c0710359daacf[m
+Author: jflyper <shinoda@jaist.ac.jp>
+Date:   Sat Jul 9 12:45:05 2016 +0900
+
+    Fix a typo in openSerialPort()
+    
+    Small, irrelevant (caz softserials comes in pairs) mistake here.
+
+[33mcommit dc16023de56e7bddeb0de7c579e636a6226220e2[m
+Author: Jaakko Laurikainen <lkaino@gmail.com>
+Date:   Thu Jul 7 14:06:37 2016 +0300
+
+    Removed system_stm32f30x.* for F3FCRACING
+
+[33mcommit 6e89bf86da37668bc367d808858028e2024219f1[m
+Author: Jaakko Laurikainen <lkaino@gmail.com>
+Date:   Wed Jul 6 22:34:31 2016 +0300
+
+    Removed default current meter scaling value.
+
+[33mcommit e376f37690b8ffcbc20e8783837ae46d9d91da4e[m
+Author: Jaakko Laurikainen <lkaino@gmail.com>
+Date:   Wed Jul 6 09:50:02 2016 +0300
+
+    New target: F3FC Racing
+    
+    F3FC Racing board from RCExplorer.se.
+    
+    Upcoming standalone board (not the Tricopter integrated).
+
+[33mcommit 884ac0b390a8aa614e5b2cf5d39b4fab0d50dacc[m
+Merge: d2bfbd5 67209a3
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Thu Jul 7 11:47:56 2016 +0100
+
+    Merge pull request #2288 from martinbudden/tidy_targets
+    
+    Deleted NAZE32PRO target and removed duplicated target files
+
+[33mcommit 67209a335249831c60e59aee68dab9b8b2925f38[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Thu Jul 7 10:31:03 2016 +0100
+
+    Deleted NAZE32PRO target and removed duplicated target files
+
+[33mcommit 320db5faab49f22d68fbb3a25796b00a8c152739[m
+Author: Evgeny Sychov <evgeny.sychov@gmail.com>
+Date:   Thu Jul 7 00:57:39 2016 -0700
+
+    Rework dma driver
+
+[33mcommit d2bfbd5a6c8d55b08d49e45c4bbb23a5d381e515[m
+Merge: fc3f928 b13e5fe
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Thu Jul 7 07:53:39 2016 +0100
+
+    Merge pull request #2234 from martinbudden/mrg_pid_filters
+    
+    Merge PID filter changes from betaflight.
+
+[33mcommit fc3f928c7c6e7dd8b03de3226ee5501a5be41cb7[m
+Merge: f7b6fba d9cb0a2
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Thu Jul 7 07:23:35 2016 +0100
+
+    Merge pull request #2235 from martinbudden/fix_rc_lookup
+    
+    Fixed rc_lookup so all implemetation detail is local to rc_curves.c
+
+[33mcommit f7b6fba66f24d7f7129ef03ffbb69b235041596c[m
+Merge: bc9b7c9 b87a674
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Thu Jul 7 07:18:12 2016 +0100
+
+    Merge pull request #2227 from DzikuVx/cf-pid-filters-update
+    
+    docs update for lpf filters
+
+[33mcommit b13e5fe0f0572dbad7186861c06b655b2beb2866[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Mon Jun 6 19:35:42 2016 +0100
+
+    Merge PID filter changes from betaflight.
+
+[33mcommit d9cb0a295125eb474debdb8c4d37713d3d430341[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Mon May 30 06:19:10 2016 +0100
+
+    Fixed rc_lookup so all implemetation detail is local to rc_curves.c
+
+[33mcommit bc9b7c9d6863ba3e0f7fc219ccd65ee93273fb90[m
+Merge: 0da0b11 a006e3e
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Thu Jul 7 06:33:39 2016 +0100
+
+    Merge pull request #2285 from martinbudden/fix_statusindicator
+    
+    Changed binary constants to hex to avoid compiler warnings
+
+[33mcommit a006e3efcdfdd3a4148a03c2576498351f152eee[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Wed Jul 6 22:32:04 2016 +0100
+
+    Changed binary constants to hex to avoid compiler warnings
+
+[33mcommit dc543165f3b8b1a6a322f97bf690bdfc5532a3a1[m
+Merge: bb1b9f0 0da0b11
+Author: Nico Sachs <nico.sachs@gmail.com>
+Date:   Wed Jul 6 22:24:52 2016 +0200
+
+    Merge commit '0da0b11be40c3f89f633b073bf93c298e9a1af49' into SRXL_V2
+    
+    Conflicts:
+    	Makefile
+
+[33mcommit bb1b9f0757b29fcd7b7be84618dcf2976aa7188d[m
+Author: Nico Sachs <nico.sachs@gmail.com>
+Date:   Wed Jul 6 22:13:59 2016 +0200
+
+    Merge with changes from #2246 fix
+
+[33mcommit 0da0b11be40c3f89f633b073bf93c298e9a1af49[m
+Merge: f5360d7 2e658ee
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Wed Jul 6 20:13:13 2016 +0200
+
+    Merge branch 'DreamNik-fix_arm_atomic_header'
+
+[33mcommit 2e658ee9ba0e914a5d7fdda7c9c80cc4e57561c7[m
+Merge: f5360d7 acdafed
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Wed Jul 6 20:12:39 2016 +0200
+
+    Merge branch 'fix_arm_atomic_header' of https://github.com/DreamNik/cleanflight into DreamNik-fix_arm_atomic_header
+
+[33mcommit f5360d7573028d3c05eaa7fb5e1f3918076ca353[m
+Merge: 4439588 850cd14
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Jul 6 20:09:13 2016 +0200
+
+    Merge pull request #2277 from DreamNik/fix_led_config_variable
+    
+    cleanup led_config declaration.
+
+[33mcommit 44395886883b29ba89aaf4472c4d571416216e90[m
+Merge: ece684f c59b28f
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Jul 6 20:05:54 2016 +0200
+
+    Merge pull request #2226 from cleanflight/osd-support
+    
+    First cut of OSD support
+
+[33mcommit c59b28fd9632e15d609f2ddcaa09c76277d58cef[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Wed Jul 6 20:05:00 2016 +0200
+
+    Refactor logo drawing code to make it re-usable.  logo is now declared
+    as a static OSD olement.
+
+[33mcommit fe2e827a7401e5a1c4a2dbd41ae0d80621134a81[m
+Author: Nico Sachs <nico.sachs@gmail.com>
+Date:   Wed Jul 6 17:58:27 2016 +0200
+
+    Merge with #2253
+
+[33mcommit eeb0754effdf38eef052511f5dc2f1beb41fc5f2[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Jul 5 14:10:54 2016 +0200
+
+    default to using MSP_SERVER to avoid uninitialised variable warnings.
+
+[33mcommit 5ae57b8dfc245a7fe0859b9a2c2704cdea36b39b[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Jul 5 01:53:07 2016 +0200
+
+    Fix COLIBRI_RACE compilation (MSP server changes).
+
+[33mcommit f7a316eb9d2b053ad9387c4a2eda4f3a5281ec96[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Tue Jul 5 00:57:27 2016 +0200
+
+    More minor MSP naming cleanups.
+
+[33mcommit ffa48450f63e6e168f423b4a36dfe7110aad6a10[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Jul 4 23:44:05 2016 +0200
+
+    Refactor some of the MSP code.
+    
+    * Each port is now given a 'mode' - server or client.
+    * 'Direction' is removed.
+    * Lots of changes to names to help understand what is happening.
+    Previously it was unclear and recent commits made itmore difficult. This
+    commit should resolve that.
+    * Replies are again created on the stack.
+    * Command handlers joined together, simplifying the code.  Previously IN
+    and OUT command handlers were seperated because they required different
+    local variables and handled reply generation differently but this is no
+    longer the case.  This should also help with future refactorings.
+    * Mis-received characters won't cause problems any more.
+
+[33mcommit 376e37ea2b2db068c7ea31442a49edf6c0325325[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Jul 4 19:37:13 2016 +0200
+
+    Introduce the concept of MSP SERVER and CLIENT when configuring a serial
+    port.  The sharing rules only apply to MSP SERVER ports.  CLIENT ports
+    are not shareable with other functions.
+
+[33mcommit 13b8d3cbbefc1264271f267550d26e6dbd23e698[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Mon Jul 4 18:58:55 2016 +0200
+
+    Remove MSP parameter group usage.
+    
+    NOTE: The long term goal is to expose PG's directly via MSP (for
+    backup/restore purposes), rather than make existing MSP commands use
+    PGs.  Clients will then be able to using PG's for setting/reading
+    configuration and to use MSP commands for system state.
+    
+    This solves the problem of an 8 bit ID for MSP commands and since PG's
+    are also versioned will help with compatibility.
+
+[33mcommit 850cd14e1fd36c28a3901c3d9a7072f3268cc188[m
+Author: DreamNik <dreamnik@mail.ru>
+Date:   Sun Jul 3 20:53:26 2016 +0300
+
+    use standard type form
+
+[33mcommit 8cd55b34276cc61c87f0e1ed2490e4b84530a453[m
+Author: DreamNik <dreamnik@mail.ru>
+Date:   Sun Jul 3 20:49:35 2016 +0300
+
+    fix type error
+
+[33mcommit fe0359e242ed9d9e3678dd02a409a556adf1469e[m
+Author: DreamNik <dreamnik@mail.ru>
+Date:   Sun Jul 3 19:52:28 2016 +0300
+
+    declare "led_config" as extern variable in header
+
+[33mcommit acdafed75f7b30dfca4c5e7c614856600e13c4d2[m
+Author: DreamNik <dreamnik@mail.ru>
+Date:   Sun Jul 3 19:50:52 2016 +0300
+
+    disable arm atomic functions on non-arm devices
+
+[33mcommit 16e79bbedb3933e06a37d67134142167d6451b0b[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Jul 2 22:05:29 2016 +0200
+
+    put the onus on the caller of max7456_clearScreen() to call
+    max7456_ensureDisplayClearIsComplete() instead of assuming a delay is
+    needed in max7456_clearScreen()
+
+[33mcommit d353446c406204f6f8d26375c840af90698cb765[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Jul 2 21:40:10 2016 +0200
+
+    add note regarding factory preset bits in the max7456 OSDBL register
+
+[33mcommit 94a295bef8b9b543bd02a9c0619fc07e5adbbf7c[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Jul 2 21:39:35 2016 +0200
+
+    cleanup some legacy max7456 initialisation code.
+
+[33mcommit 4af5fc459e9ec4b2fe55df068c2cb6762dc3ed95[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Jul 2 21:14:11 2016 +0200
+
+    clarifying usage of 9mhz SPI clock for max7456
+
+[33mcommit 1538c65c38ae7b53b699ff0562e03d15f280f615[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Jul 2 21:11:29 2016 +0200
+
+    remove resetWait debug code from max7456 code.
+
+[33mcommit 5b4460dc5694e54ca7dbc385a37f24ef5489e264[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Jul 2 17:06:12 2016 +0200
+
+    Use for-loop to replace sub-optimal prototype code.
+
+[33mcommit bc2de9479581f9b092c8403634a0e3ecfcc1cb29[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Jul 2 15:41:40 2016 +0200
+
+    Move declarations for fc and osd tasks into fc/osd_tasks.h
+
+[33mcommit 34508a3ab304238cd99b24fa0bdd09f53868c084[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Jul 2 15:38:42 2016 +0200
+
+    move fc scheduler initialation into a method.
+
+[33mcommit d8f45e278cb694dc97bccfaddf1ed89fcdda684b[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sat Jul 2 15:36:38 2016 +0200
+
+    Relocate scheduler and build related files into scheduler and build
+    directories.
+
+[33mcommit 4a35e50b4b1f357596f92be2cc197fc7bd1beaa9[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Fri Jun 17 20:31:57 2016 +0200
+
+    Allow default video mode to be specified by the target.
+
+[33mcommit 79b20ab3368a84d51bddf273b70d9ba28f6626e7[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Tue Jun 14 12:06:38 2016 +0200
+
+    delete debug max7456 VSYNC timing code.
+
+[33mcommit 9f7df32a3850518f1a04410756c32467de6283b7[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Tue Jun 14 12:05:43 2016 +0200
+
+    use ARRAYLEN in osd msp client code.
+
+[33mcommit 8e1ee70d36daadde40c117282a8c7eeae4290c71[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Tue Jun 14 12:05:15 2016 +0200
+
+    Delete some max7456 debug code.
+
+[33mcommit 46b4b3cac9aed66274b6e85b175c8d6078febcd9[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Tue Jun 14 11:58:57 2016 +0200
+
+    move some scheduler externs to a header file
+
+[33mcommit b96db8d42c50450d237d8451b707dca07f1c762e[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Tue Jun 14 11:20:26 2016 +0200
+
+    Minor OSd related changes after review from @ledvinap.
+
+[33mcommit ad6590a09851defae3b3f8a73e98915f894f1afc[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Sun Jun 12 17:10:46 2016 +0200
+
+    Add SPRACINGF3OSD and SPRACINGF1OSD to travis automated builds.
+
+[33mcommit 7cace88162db1e9cfcdd66ac9c62476bb837333e[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Sun Jun 12 16:33:00 2016 +0200
+
+    Fix CC3D build - SPI source missing from target.
+
+[33mcommit 25f4be7377088d38339cee6e479de1d2eb4a3ab4[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Sun Jun 12 15:08:09 2016 +0200
+
+    update the warning led to pulse out a codes when the fc or camera is
+    disconnected.
+    
+    The state introduced into the statusIndicator code ensures that each
+    mode is completed before allowing a chaning to a different status mode.
+    
+    Move some msp client state out of fcState.
+
+[33mcommit 629d43f3856dc57a202d4828114f1b42ffdfa167[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Sat Jun 11 19:10:12 2016 +0200
+
+    Use the max7456 VSYNC signal to initial writing to the display to avoid
+    display artifacts.
+    
+    This also relocates quite a lot of low level code into the video driver
+    from the high level osd_max7456.c
+
+[33mcommit f1522a2e0bb678c96e900a41d39ef503dc176596[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Sat Jun 11 17:30:08 2016 +0200
+
+    disable ADC debugging for OSD targets.
+
+[33mcommit 85317c269b99f9066b7ecab54cd2c1b51b7e48ba[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Sat Jun 11 17:15:49 2016 +0200
+
+    disable some video debug code.
+
+[33mcommit fbf9fac56400f3c221b81886bb0f1ee669c3afec[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Sat Jun 11 17:15:31 2016 +0200
+
+    Display additional voltage meters on the OSD.
+    Allow configurator to get all voltage meters (Some hacks were required,
+    see #2221).
+    
+    fix baudrate changes missed in previous commit.
+
+[33mcommit 591cea3e30d6d2a0fdf70392c93e80baaaaba5a7[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Sat Jun 11 17:12:12 2016 +0200
+
+    debug FC cycle time debug code
+
+[33mcommit bf99ff8b6662dfef510beaa6625f5ac2f1590bef[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Sat Jun 11 12:41:54 2016 +0200
+
+    Update functionBaudRate names.
+
+[33mcommit 29a612fa37fcd84460cd978746cc9bda0dd44fbf[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Fri Jun 10 19:49:28 2016 +0200
+
+    Change default video mode to NTSC and support PAL/NTSC screen.
+
+[33mcommit 62f1bfa708867c8f326ca3fc369ba63c563e4a2c[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Fri Jun 10 17:52:26 2016 +0200
+
+    Display motor mixer outputs on OSD.
+    
+    First four motors only, regardless of mixer type, assumes quad X.
+
+[33mcommit 33eb68e15224e63156cbba458eac86d17a7b0587[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Fri Jun 10 15:55:42 2016 +0200
+
+    Change load on the FC.
+
+[33mcommit 612256c9ab1c214f1934b7ed2eb6cc9c94d64430[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Fri Jun 10 15:54:34 2016 +0200
+
+    Add camera status and flashing effects to the OSD.
+    
+    Flashes 'NO CAMERA' when camera disconnected.
+    Flashes fc related information when FC timeout occurs.
+    
+    The timer code is borrowed and refactored from the LED Strip code.
+    There may be some parity and use-use to be found in a later-refactoring.
+    
+    EXTI configuration needs to be moved to target definition.
+    
+    This commit also adds some EXTI LOS/VSYNC/HSYNC debug code which a later
+    commit will remove.
+
+[33mcommit 5dc260df03b77e833a240401ac6f7cb63c84ced3[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Thu Jun 9 20:13:40 2016 +0200
+
+    remove max7456 dependencies from osd boot and core.
+    
+    max7456 osd specific code now lives in osd_max7456.c and is compiled in
+    when needed by the target.
+
+[33mcommit 94464384f9da6f74ad595c83c032278f9c2efd9a[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Thu Jun 9 19:44:40 2016 +0200
+
+    preserve behaviour from 440784b76b997c70b029ad72c7cd17c6b17b9dac
+
+[33mcommit 846b595853030e40aa3838dd9be32c220137e4d1[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Thu Jun 9 19:38:58 2016 +0200
+
+    fix font mapping (':' was unmapped)
+
+[33mcommit 03b7662a324a9f85226f50bd86c7f836d50f46ec[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Thu Jun 9 18:02:09 2016 +0200
+
+    introduce a simple absctraction between the video hardware and the OSD
+    code.
+    
+    the concept of font mapping, raw characters, cursors, writing strings
+    and a screen buffer is no-longer in the video driver.
+    
+    The main OSD code that deals with putting characters in certain
+    positions and using characters to display raw font symbols is no-longer
+    video driver dependant.
+    
+    The font mapping is now located with the font.
+
+[33mcommit f6ac2dd7ee9c951001eb0271de884d9c23e5b2ad[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Mon Jun 6 23:32:57 2016 +0200
+
+    Add Cleanflight font.  Add MAX7456 font upload code.  Update spash
+    screen to show the cleanflight logo.
+
+[33mcommit ecc70776067f7db2aef13efd8b78897908835aa1[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Fri Jun 3 02:54:04 2016 +0200
+
+    First cut of Cleanflight OSD support.
+    
+    The main point is that there is loads of great re-usable code for both
+    OSD and FCs and allow the both to be configured using the Cleanflight
+    configurator.
+    
+    The Cleanflight codebase can now be used to build TWO types of targets:
+    FC or OSD.
+    
+    This commit seperates as all the FC specific code into the src/main/fc
+    directory, OSD code goes in src/main/osd.  Shared code is everywhere
+    else.  some files have an `_fc` suffux to allow the files to be
+    distinguished (e.g. on IDE editor tabs).
+    
+    The idea is that we can now build F1 or F3 based OSDs that use the
+    MAX7456 IC.  The display logic should be reusable for other OSD driver
+    ICs (e.g. BrainFPV).  The OSD code should also be usable if the MAX7456
+    is directly connected to an FC in the future.  We'll cross that bridge
+    when we come to it however as right now the scheduler tasks, bootup
+    sequence and other code will likely have to be refactored/reoganized
+    somewhat.  Later commits will add OSD code to the STM32F3DISCOVERY
+    target and perhaps an an STM32F3DISCOVERYOSD for development of OSD only
+    boards.
+
+[33mcommit ece684fab13674bada617464d8444abbf71bd4aa[m
+Merge: 71355dc 945e660
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Sat Jul 2 19:36:45 2016 +0200
+
+    Merge pull request #2251 from inbilla/issues/PR_2250_VagrantProvisioningFix
+    
+    Fixing vagrant provisioning error.
+
+[33mcommit 71355dc5f89ccaaff7bb392f1939dc6e167f4117[m
+Merge: 7ee847b f3ccba1
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Sat Jul 2 17:02:25 2016 +0100
+
+    Merge pull request #2222 from mojocorp/patch-1
+    
+    Fix a typo
+
+[33mcommit 7ee847b4a85014a69ee3984ce9f584364c5c8437[m
+Merge: 58dfea4 c68bfbf
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Sat Jul 2 17:00:34 2016 +0100
+
+    Merge pull request #2224 from tigert/patch-4
+    
+    Charging-only USB cables seem to be yet another cause of confusion.
+
+[33mcommit 58dfea463603e732c717e7c0ab692eac35361cc8[m
+Merge: 531b4cf beac0a3
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Sat Jul 2 17:04:24 2016 +0200
+
+    Merge pull request #2201 from gaelj/StatusLed_Pattern_Disabled-Arm_Reason
+    
+    Status led pattern: disabled arm reason
+
+[33mcommit 531b4cfe5e56f43b46ed44b21d098289c028b122[m
+Merge: 946dcd8 c385667
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Sat Jul 2 13:31:22 2016 +0200
+
+    Merge pull request #2249 from williamlaycraft/patch-1
+    
+    Correcting a word in doc 'Board - SPRacingF3.md'
+
+[33mcommit 946dcd8267169c7e1d6503f1dea038f09022f2d2[m
+Author: Hydra <dominic.clifton@cleanflight.com>
+Date:   Sun Jun 26 01:10:09 2016 +0100
+
+    Update development docs - cygwin git-completion package is replaced with
+    bash-completion.
+
+[33mcommit 10b50a79d427c23446cba09eb0ef5510d55d161c[m
+Author: Nico Sachs <nico.sachs@gmail.com>
+Date:   Sat Jun 25 15:05:46 2016 +0200
+
+    doc corrected
+
+[33mcommit 7a17dfc47c0ffbb4ffc38fad817075049d142ae5[m
+Author: Nico Sachs <nico.sachs@gmail.com>
+Date:   Sat Jun 25 14:58:04 2016 +0200
+
+    suggested changes by ledvinap
+
+[33mcommit 40831e1eefda478314dadb663d1cad007d87681b[m
+Author: Nico Sachs <nico.sachs@gmail.com>
+Date:   Sat Jun 25 11:44:02 2016 +0200
+
+    moved to crc ccitt
+
+[33mcommit 1fc8eadaf4e12b0f8541840ebae53b0f5214ea99[m
+Author: Nico Sachs <nsachs@ra.rockwell.com>
+Date:   Thu Jun 23 18:50:02 2016 +0200
+
+    SRXL implementation to a seperate file,
+    improved code within ISR
+    CRC outsourced
+    docs updated
+
+[33mcommit e3e68f6572071abc93be0e1a214435571c8d0676[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Thu Jun 23 15:19:05 2016 +0200
+
+    fixup! Remove old EXTI handling code
+
+[33mcommit 945e660346d6f3847a56c690de0c4d114dbacae9[m
+Author: Joshua Green <inbilla@gmail.com>
+Date:   Thu Jun 23 21:59:45 2016 +1000
+
+    Alternative solution.
+    Adding the missing public key (6D1D8367A3421AFB) to the keyring.
+
+[33mcommit 3c4aa7a8f0fd01ac501faa8ca97404c003f5762d[m
+Author: Joshua Green <inbilla@gmail.com>
+Date:   Thu Jun 23 21:08:45 2016 +1000
+
+    Adding servo support for F3 Evo.
+    This allows Tricopters on th SP Racing F3 Evo
+
+[33mcommit 1b1f6b010170b023d02a62f3a76a59364c8138d2[m
+Author: Joshua Green <inbilla@gmail.com>
+Date:   Thu Jun 23 21:03:29 2016 +1000
+
+    Fixing vagrant provisioning error.
+    Provisioning succeeds with this change.
+
+[33mcommit c385667bdb6cd9b4b43e069084b9b04731d68832[m
+Author: williamlaycraft <william.laycraft@gmail.com>
+Date:   Tue Jun 21 21:28:47 2016 -0700
+
+    Update Board - SPRacingF3.md
+    
+    Added a single letter. Corrected an "of" to "off."
+
+[33mcommit 44f3c18ac07acb66e65c4228f08c4b7cb332c987[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Wed Jun 15 07:13:06 2016 +0100
+
+    Fixup after rebase
+
+[33mcommit 998f1108bce2e7a76c6dcd1a404addc32e501305[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Tue Mar 1 12:50:16 2016 +0000
+
+    Fixed call to sonarGetHardwareConfiguration.
+
+[33mcommit f08c1bcd837a403dd2c9381304beb60221afcccb[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Thu Feb 25 18:27:43 2016 +0000
+
+    Code from jflyper.
+
+[33mcommit 45adf548c2d06d05c20459bb86afceaa84157dd4[m
+Author: Morgan Leborgne <leborgne@zib.de>
+Date:   Tue Jun 14 12:41:57 2016 +0200
+
+    filter: use M_PIf from maths.h instead of local define.
+
+[33mcommit 81656f6baaab52b1f64ab183baf72569aa3251bc[m
+Author: Morgan Leborgne <leborgne@zib.de>
+Date:   Tue Jun 14 12:40:52 2016 +0200
+
+    filter: Fix indentation - use 4 spaces instead of tabs.
+
+[33mcommit 6513117c18689fba87f607b7e8b6e76d7c91d162[m
+Author: Morgan Leborgne <leborgne@zib.de>
+Date:   Tue Jun 14 11:48:42 2016 +0200
+
+    The 2nd memset() argument '1500' doesn't fit into an 'unsigned char'.
+    
+    The 2nd parameter is passed as an 'int', but the function fills the block
+    of memory using the 'unsigned char' conversion of this value.
+    
+    "void* memset( void* dest, int ch, std::size_t count );
+    Converts the value ch to unsigned char and copies it into each of the first
+    count characters of the object pointed to by dest."
+
+[33mcommit 8f8428a4aafa87227d07b370885ad6c19123d2ec[m
+Merge: bafb43a c4cdf32
+Author: Austin St. Aubin <AustinSaintAubin@gmail.com>
+Date:   Sun Jun 12 20:20:41 2016 -0500
+
+    Merge remote-tracking branch 'refs/remotes/cleanflight/master'
+    
+    Conflicts:
+    	docs/Cli.md
+
+[33mcommit b87a674200fd2bd47799ab1dc0cecfaab204efa8[m
+Author: Pawel Spychalski (DzikuVx) <pspychalski@gmail.com>
+Date:   Sun Jun 12 19:17:56 2016 +0200
+
+    update
+
+[33mcommit 233e50dd1e517113061c203edb8bdf18d4fbc291[m
+Author: Pawel Spychalski (DzikuVx) <pspychalski@gmail.com>
+Date:   Sun Jun 12 17:59:25 2016 +0200
+
+    docs update for lpf filters
+
+[33mcommit cbc4b2e5d7c97ab473c0add44b4b7d1e61d32905[m
+Author: 4712 <4712@outlook.de>
+Date:   Sun Jun 12 14:46:07 2016 +0200
+
+    blheli4wayif timing improvement
+    
+    Bit state reading timed later to improve connection for ESC with higher
+    capacities at input pin.
+
+[33mcommit 84d85766ef5b78f5db88497b6e3eaf7502c9a730[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Sun Jun 12 12:08:24 2016 +0200
+
+    Fix IOToggle
+    
+    `uint32_t` is necessary for BSRR mask
+
+[33mcommit c68bfbf9a88d430bf1cae6c2db7bfd89ddcbfae0[m
+Author: Tuomas Kuosmanen <tuomas.kuosmanen@gmail.com>
+Date:   Sun Jun 12 11:41:58 2016 +0300
+
+    bah, nitpick styling
+
+[33mcommit 9fa08599a61b4a6754e2724aadb38d77c960d8d1[m
+Author: Tuomas Kuosmanen <tuomas.kuosmanen@gmail.com>
+Date:   Sun Jun 12 11:28:57 2016 +0300
+
+    fix some tyops
+
+[33mcommit b36ae9fcc7503712af7b8ac5ea7b72d773b39405[m
+Author: Tuomas Kuosmanen <tuomas.kuosmanen@gmail.com>
+Date:   Sun Jun 12 10:48:43 2016 +0300
+
+    Mention charging-only cables
+
+[33mcommit f3ccba1da46d406b934be65178752022ebdc129f[m
+Author: mojocorp <morganleborgne@gmail.com>
+Date:   Sun Jun 12 00:24:49 2016 +0200
+
+    Fix a typo
+
+[33mcommit f0ce424c8d84bbbf422a3b63259e555a8724945a[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Thu Jun 9 18:09:56 2016 +0200
+
+    use new EXTI handling in drivers
+
+[33mcommit 209cb939adffb08ef072d2bf286dbf1cd9b1e4f9[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Wed Jan 6 15:49:24 2016 +0100
+
+    fix tests
+
+[33mcommit 454ad9c8543ba5786232f9ac56463e74fde69d29[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Wed Oct 21 17:48:20 2015 +0200
+
+    Remove old EXTI handling code
+
+[33mcommit efb1aaf4fe6b0ef4e9213afebe162e59a6f93b27[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Wed Oct 21 17:47:51 2015 +0200
+
+    Unify EXTI priority defines
+
+[33mcommit 1bf57376d0a3d40761b0f6bd215fe6730220164f[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Wed Jan 6 15:48:42 2016 +0100
+
+    Add IO, EXTI and RCC implementation
+    
+    New files are added
+    exti.h contains both old and new implemnetation (to be removed soon)
+    Available IO pins are defined for all targets (should be checked against schematics)
+    Implemented priority handling for EXTI (history rewrite)
+
+[33mcommit beac0a35cec690f33a2ef5d13f41f3e3a9d8e57a[m
+Author: gael <gaeljames@gmail.com>
+Date:   Thu Jun 2 19:40:31 2016 +0200
+
+    Use Warning LED flash count to inform arming prevention
+    
+    | Reason for disabled Arming               | LED Flashes |
+    |------------------------------------------|-------------|
+    | CLI is active in the configurator        | 2           |
+    | Failsafe mode is active                  | 3           |
+    | The aircraft has landed in failsafe mode | 3           |
+    | Maximum arming angle is exceeded         | 4           |
+    | Calibration is active                    | 5           |
+    | The system is overloaded                 | 6           |
+
+[33mcommit 8aad2964806c05d24e9ddd133b3f0e1a4e1f3701[m
+Merge: 74a011b c4cdf32
+Author: 4712 <4712@users.noreply.github.com>
+Date:   Mon Jun 6 22:12:54 2016 +0200
+
+    Merge pull request #5 from cleanflight/master
+    
+    pull latest master
+
+[33mcommit c4cdf32d0e2694a2fd85a26958b759b311c33bd6[m
+Merge: e4796f8 7bbe780
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Mon Jun 6 18:20:26 2016 +0100
+
+    Merge pull request #1193 from oxivanisher/master
+    
+    Align_mag addition for UBLOX Neo-7 in the docs
+
+[33mcommit e4796f8c306d1712655ffa8341d9fe7c391de5e0[m
+Merge: a77bc76 5a202ad
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Mon Jun 6 17:55:28 2016 +0100
+
+    Merge pull request #2199 from gaelj/Documentation-cleanup
+    
+    Documentation update
+
+[33mcommit 5a202adfbb361056e4ef7714b3e0cad71d3186c1[m
+Author: gael <gaeljames@gmail.com>
+Date:   Thu Jun 2 14:18:13 2016 +0200
+
+    Documentation update
+    
+    - add SP Racing F3 Evo board
+    - add links to other .md files where relevant
+    - update commands and variables
+    - add Parallax 28015 Sonar
+    - fix some typos
+    
+    Fix text formatting
+
+[33mcommit a77bc76ab655b5b6d5b24e2f23fda56847117e7d[m
+Merge: 44c449a 6dbe5aa
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Sun Jun 5 04:28:44 2016 +0200
+
+    Merge pull request #2174 from gaelj/Cygwin-compatible-git-attributes
+    
+    Use lf EOL for travis and make files
+
+[33mcommit 44c449aa559f98e6ac20df74e1e30bd5a921adb3[m
+Merge: 472914e dbe17d3
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Sun Jun 5 04:25:29 2016 +0200
+
+    Merge pull request #2209 from MJ666/Hardware_detection_fix
+    
+    CJMCU and AlienFligth hardware detection MCP fix
+
+[33mcommit 472914e4c8a1a2720d1dcd06dd2da17fead50c0b[m
+Merge: 95a78ed 49aa8af
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Sun Jun 5 04:13:03 2016 +0200
+
+    Merge pull request #2194 from ledvinap/improvement-travis-warnings
+    
+    Fix submakefile inheriting CC etc
+
+[33mcommit 95a78edf5823a21f710806f33356255320488ec3[m
+Merge: 3e6a692 87e79e6
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Sun Jun 5 04:09:55 2016 +0200
+
+    Merge pull request #2207 from ledvinap/fix-memcpy_fn
+    
+    Fix win32 unitests
+
+[33mcommit dbe17d300660ad875882cb57a0b04479961a6248[m
+Author: Michael Jakob <michael.p.jakob@web.de>
+Date:   Sat Jun 4 20:34:42 2016 +0200
+
+    CJMCU and AlienFligth hardware detection MCP fix
+
+[33mcommit 87e79e6e404d9c9c5350917984c69cfad0c8e644[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Fri Jun 3 19:21:22 2016 +0200
+
+    Fix win32 unitests
+
+[33mcommit 49aa8af0c727bfa338d43f512fa218ba6dd9cc87[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Thu Jun 2 18:40:39 2016 +0200
+
+    Use --coverage in unittests
+    
+    --coverage enables -fprofile-arcs -ftest-coverage / -lgcov as necessary,
+      both gcc ang clang support it
+
+[33mcommit 1f50f91bc363038aff1f1a6425a9be09e401ee9f[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Thu Jun 2 18:36:30 2016 +0200
+
+    Set FAIL_ON_WARNINGS in .travis.sh
+    
+    When building pull request
+
+[33mcommit 6dbe5aad385154819e35bfc18189e5c9ca02c19e[m
+Author: gael <gaeljames@gmail.com>
+Date:   Sat May 28 01:39:12 2016 +0200
+
+    Use lf EOL for travis and make files
+    
+    Just use *.sh eol=lf and Makefile eol=lf
+    
+    Remove duplicate line + add final newline
+    
+    Cleanup
+
+[33mcommit bafb43af249e3a95f0755125a7271903b16be598[m
+Merge: 046b6d2 3e6a692
+Author: Austin St. Aubin <AustinSaintAubin@gmail.com>
+Date:   Wed Jun 1 20:02:15 2016 -0500
+
+    Merged branch master into patch-3
+
+[33mcommit a540f917d040a9a13a9323d48d2da9f8ecd4146a[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Wed Jun 1 21:37:49 2016 +0200
+
+    Revert recursive unittest build
+
+[33mcommit 3e6a69284d8919d73b27c6e76ae3a9102a8f91df[m
+Merge: 486145e b3c535d
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Wed Jun 1 17:51:40 2016 +0200
+
+    Merge branch 'martinbudden-tidy_makefile'
+
+[33mcommit b3c535d30e032a28fbe2f4242ce029158de62afe[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Wed Jun 1 17:50:46 2016 +0200
+
+    remove unused FATFS code from Makefile, ayncfatfs replaced it a while
+    ago.
+
+[33mcommit 8597602970d9d42cfd75fd98cf43ec768fac7238[m
+Merge: 486145e 4003c46
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Wed Jun 1 17:44:20 2016 +0200
+
+    Merge branch 'tidy_makefile' of https://github.com/martinbudden/cleanflight into martinbudden-tidy_makefile
+
+[33mcommit 486145ee30b3164b9150fd1d1f4ba7a31dee40fd[m
+Merge: 1975182 6e37a0c
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Jun 1 17:14:13 2016 +0200
+
+    Merge pull request #2124 from DzikuVx/cf-yaw_jump_prevention_limit-docs-update
+    
+    Cf yaw jump prevention limit docs update
+
+[33mcommit 1975182e099396e90b207f9f70a0c809262ecdce[m
+Merge: 53cc378 63c00c3
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Jun 1 17:12:52 2016 +0200
+
+    Merge pull request #2151 from ledvinap/improvement-travis-warnings
+    
+    Fail Travis build when PR contains warnings
+
+[33mcommit 53cc3784188716eb632c616af82886118bd411e2[m
+Merge: cda1aae 83fb47c
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Jun 1 17:04:42 2016 +0200
+
+    Merge pull request #2183 from ledvinap/fix-msp-rxRefreshRate
+    
+    Set rxRefreshRate for RX_MSP
+
+[33mcommit cda1aaef00bfde1cab970f41203766f9e9abc876[m
+Merge: 260d31a 80d823c
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Jun 1 17:04:07 2016 +0200
+
+    Merge pull request #2190 from cbrookins/patch-1
+    
+    Update Spektrum bind.md
+
+[33mcommit 260d31ab909cded7a7f22da3b81610c07e0b5690[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Wed Jun 1 17:00:34 2016 +0200
+
+    Code style cleanups.  See #2191
+
+[33mcommit f24209e42c1e6fbf4e8c566a7bcf72abe4ec4c09[m
+Merge: 1e36693 cb57c65
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Wed Jun 1 16:56:27 2016 +0200
+
+    Merge branch 'gaelj-MSP-LEDstrip-ModeColor'
+
+[33mcommit 80d823c4629b11d2318848fa280e903c182edee6[m
+Author: chris / brookins <chris@brookins.info>
+Date:   Wed Jun 1 10:02:26 2016 -0400
+
+    Update Spektrum bind.md
+    
+    Added Lemon RX DSMX/DX6i to sat/trans combinations
+
+[33mcommit cb57c653dd65924d7f2f6f1da1a949e05f982477[m
+Merge: 1e36693 14471c1
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Wed Jun 1 13:07:32 2016 +0200
+
+    Merge branch 'MSP-LEDstrip-ModeColor' of https://github.com/gaelj/cleanflight into gaelj-MSP-LEDstrip-ModeColor
+
+[33mcommit 1e366936437ef052f0b4e4d46b08c015e5b323d6[m
+Merge: e209124 1ff8af2
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Jun 1 13:04:26 2016 +0200
+
+    Merge pull request #2182 from gaelj/Doc_and_travis_targets
+    
+    Doc: disabled-arming conditions
+
+[33mcommit e2091247a4e378a881c0b8b4858df4fe96ac2ee8[m
+Merge: 884b2d2 15ed8eb
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Wed Jun 1 12:26:57 2016 +0200
+
+    Merge pull request #2184 from gaelj/Doc-Update_Battery.md
+    
+    Documentation update Battery.md after some CLI changes
+
+[33mcommit 15ed8eb7629a69a35bb51ffd570768dc306a86d9[m
+Author: gael <gaeljames@gmail.com>
+Date:   Tue May 31 19:58:47 2016 +0200
+
+    Documentation update after some CLI changes
+
+[33mcommit 1ff8af2ecd2df6ab614b54cb29656654954dd783[m
+Author: gael <gaeljames@gmail.com>
+Date:   Tue May 31 01:24:25 2016 +0200
+
+    Doc: disabled arm conditions
+    
+    - Doc: list disabled arming conditions
+
+[33mcommit 884b2d23708dae78757872e9abeb251318346a39[m
+Merge: 0245144 74f9d62
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Tue May 31 14:04:14 2016 +0200
+
+    Merge pull request #2164 from tigert/patch-3
+    
+    mention ModemMAnager taking over some boards
+
+[33mcommit 83fb47cbcd16c541df56587d22a9f1b70d9e4e00[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Tue May 31 09:59:55 2016 +0200
+
+    Set rxRefreshRate for RX_MSP
+
+[33mcommit 02451441e0bf3fd2f09263bff93c8420dc251342[m
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Mon May 30 22:40:59 2016 +0200
+
+    SPRACINGF3EVO - Add target to fake_travis_build.sh
+
+[33mcommit 14471c16ff3a8bc14af3fa36eddee09b0cbe3a19[m
+Author: gael <gaeljames@gmail.com>
+Date:   Sat May 21 17:09:37 2016 +0200
+
+    MSP: implement LED_STRIP_MODECOLOR
+    
+    MSP version 19: add MSP_LED_STRIP_MODECOLOR and
+    MSP_SET_LED_STRIP_MODECOLOR
+    
+    Check color value before saving
+    
+    Fix conflict with pierre a buzzer PR
+
+[33mcommit 9e768fcd729b26082d77fd8d2fcfac73c73c78e9[m
+Merge: 192f626 d687575
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Mon May 30 16:52:06 2016 +0200
+
+    Merge branch 'ledvinap-cleanup-leds'
+
+[33mcommit d687575dbdb10aa3f4a2297b6f7251b1aaace8f4[m
+Merge: 192f626 19320bd
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Mon May 30 16:51:11 2016 +0200
+
+    Merge branch 'cleanup-leds' of https://github.com/ledvinap/cleanflight into ledvinap-cleanup-leds
+
+[33mcommit 4003c461db31e2acf47df663602a6acbb0d061b0[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Wed May 11 09:28:38 2016 +0100
+
+    Tidied TARGETS. Added comments.
+
+[33mcommit 00baf2a3bf95251cc6ed7bd3ab8df7282514aff0[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Sat May 7 11:49:46 2016 +0100
+
+    Improved handling of different TARGETS, removed duplication.
+
+[33mcommit 192f6264fcab1fe29cac6da10c56f9256c3f17b9[m
+Merge: 634e2e0 3f86b26
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Mon May 30 01:20:23 2016 +0200
+
+    Merge pull request #2120 from ledvinap/fix-vcp-gcc5
+    
+    USB-VCP gcc 5.3  fix
+
+[33mcommit 634e2e057da372af29b2ea1340f5d3c203d80a28[m
+Merge: 7932ed5 fef00b5
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Mon May 30 00:46:04 2016 +0200
+
+    Merge pull request #2150 from ledvinap/fix-warnings
+    
+    Fix warnings
+
+[33mcommit 7932ed58785ab056631d42b41c1bf643e59b262b[m
+Merge: 8ba3985 7100956
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Mon May 30 00:42:36 2016 +0200
+
+    Merge pull request #2141 from ledvinap/fix-fakeacc-warning
+    
+    Fix dummy function prototype
+
+[33mcommit 8ba3985be8d3100f877ea38ecf81da9b02ca8983[m
+Merge: 182ce11 ff00c7e
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Mon May 30 00:41:50 2016 +0200
+
+    Merge pull request #1090 from iforce2d/fedoradoc
+    
+    Added doc for building on Fedora linux
+
+[33mcommit 182ce11f9eb144e1432a908fa3b492a147335997[m
+Merge: 058eb5c ecd4390
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Mon May 30 00:37:38 2016 +0200
+
+    Merge pull request #2159 from gaelj/MSP_STATUS-fix-missing-airmode-flag
+    
+    Implement BoxAirMode flag in MSP_STATUS
+
+[33mcommit 058eb5c6f938fc6707a1814e75c5f91d098ee50d[m
+Merge: d60f820 ff3441d
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Mon May 30 00:36:25 2016 +0200
+
+    Merge pull request #2178 from martinbudden/fix_pid_scales
+    
+    Fix for DTerm scaling in pid_luxfloat to match pid_mwrewrite.
+
+[33mcommit d60f820d1083b60f8607923f68b09a7c4b258476[m
+Merge: a645e2c 8e78947
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Mon May 30 00:32:56 2016 +0200
+
+    Merge pull request #2176 from martinbudden/fix_mw_throttle
+    
+    Fixed handling of rcCommands[] in main pid loop.
+
+[33mcommit 8e78947f212a67d83853b87ad5f90414ffce0b54[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Sat May 28 11:28:43 2016 +0100
+
+    Fixed handling of rcCommands[] in main pid loop.
+
+[33mcommit ecd439046051ac40c28803f4b448cdf53eb503fa[m
+Author: gael <gaeljames@gmail.com>
+Date:   Fri May 20 20:25:18 2016 +0200
+
+    Implement BoxAirMode flag in MSP_STATUS
+    
+    Fixes issue  #2156
+    
+    Cleanup
+
+[33mcommit a645e2c69090ee8841bee8224a1c11ce80056514[m
+Merge: 1e14fd7 20157d9
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Thu May 26 12:57:51 2016 +0200
+
+    Merge pull request #2171 from andre92/patch-1
+    
+    Fix #2165, #2149
+    rcCommand was updated incorrectly
+
+[33mcommit 20157d9984ea697f6be43f44f803609c0beb7de4[m
+Author: André <andre-karreman@live.nl>
+Date:   Thu May 26 11:18:54 2016 +0200
+
+    fix headfree and althold_fast_change
+
+[33mcommit a8f6171c7b5af28e22f87d236e2b0912908d7cd1[m
+Author: André <andre-karreman@live.nl>
+Date:   Thu May 26 11:14:05 2016 +0200
+
+    Update mw.c
+    
+    update rcCommand[throttle] every loop, to fix this issue: https://github.com/cleanflight/cleanflight/issues/2165
+
+[33mcommit 0a93ad3cc7c01205a00974aac4013c419c105d15[m
+Author: hori64 <hori64@gmail.com>
+Date:   Tue May 24 17:54:29 2016 +0200
+
+    Smart Port telemetry GPS ground speed unit is not applicable. (#2166)
+    
+    Second try
+
+[33mcommit 74f9d628b532b4f7db7d5c5d7e2e902ed28d67f8[m
+Author: Tuomas Kuosmanen <tuomas.kuosmanen@gmail.com>
+Date:   Mon May 23 15:36:06 2016 +0300
+
+    mention ModemMAnager taking over some boards
+
+[33mcommit 19320bdaae09c1beb3a64165f658fdf44c1f4bdf[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Tue May 10 15:48:14 2016 +0200
+
+    Workaboung VCP problem with gcc 5.3
+
+[33mcommit daf71a9c0a844ab7967044a3d476e4ec74081319[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Mon May 16 20:44:06 2016 +0200
+
+    Optimize  ledstrip color conversion
+    
+    - Pass color by value
+    - Pass pointer to bit-generation routines directly
+    - Refactor hls->rgb code to get better assembly
+    - fix unittests
+    - remove unused byte-conversion code
+
+[33mcommit 90c685318d9453c0192da4bb254c78d4b42b6668[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Sun May 15 21:33:45 2016 +0200
+
+    ledstrip - fix unittests
+
+[33mcommit 078a22099c0f3ba63b372b35176426a46d8b4509[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Thu May 19 11:56:17 2016 +0200
+
+    Cleanup ledstrip
+    
+    - refactor public interface to use LED prefix
+    - use array for default colors
+    - use macros to generate led flags bits from enums
+    - use array to store mode and special colors (instead of struct members)
+    - optimize quadrant handling
+    - handle action timing in loop
+    - user smooth mapping of stick input in thrust ring and indicator
+
+[33mcommit f84aa005b4271319a8e6e58e76097b130652be1e[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Thu May 19 11:51:26 2016 +0200
+
+    light_ws2811 cleanup
+    
+    cleanup code
+    
+    remove hsv color dependency on ledstrip.c
+
+[33mcommit 51210830e041c02c69bba7cbdcafbdfe9003e641[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Thu May 19 11:44:14 2016 +0200
+
+    Optimize some inlining of memcpy in ledstrip
+    
+    gcc inlines memcpy calls, wasting FLASH space. This trick prevents inlining
+
+[33mcommit 63c00c3fbb5f9100d2cc9e5077ab095ad911eec6[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Wed May 18 16:29:53 2016 +0200
+
+    unittest - fail on warning when building PR
+    
+    FAIL_ON_WARNINGS is passed to submakefile. Main makefile does not ignore
+    test result now.
+
+[33mcommit 59e09a72ced90bc54052adee62ca859cc20e51da[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Tue May 17 22:42:28 2016 +0200
+
+    Fail Travis build when PR contains warnings
+    
+    Makefile will pass -Werror to gcc when building Travis Pull
+    request. Branches are build normally.
+
+[33mcommit fef00b5ee9790f7cdaf145a497abd03944b9f393[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Tue May 17 20:49:26 2016 +0200
+
+    fix warning - anonymous union
+
+[33mcommit 6b19654a0674ede0b5e65fbe6d79716e3741f0d3[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Tue May 17 20:49:03 2016 +0200
+
+    fix warning - unused nextGpsFlashAt
+
+[33mcommit f8c51812b662bd9a19abec3a06b13dd3a8b1fdf6[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Tue May 17 20:48:02 2016 +0200
+
+    fix warning - horizonLevelStrength
+    
+    may be used uninitialized
+
+[33mcommit b2afe1b125630cafffeacaf3c7a37a87228dbe12[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Tue May 17 20:47:19 2016 +0200
+
+    fix warning when using ak8963 over SPI
+
+[33mcommit 7100956ba66e1579985d326cc80bc794c7b7702f[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Sun May 15 21:48:29 2016 +0200
+
+    Fix dummy function prototype
+
+[33mcommit 046b6d27cfc0c21cbf7b84b7d55ce7ccaf1e0af0[m
+Author: Austin St. Aubin <AustinSaintAubin@gmail.com>
+Date:   Thu May 12 19:41:59 2016 -0500
+
+    wtf... config fix.
+
+[33mcommit ac2afe5209eb7bef9edf5a47e54a994bdf61e628[m
+Merge: ccd389d e52a07d
+Author: Austin St. Aubin <AustinSaintAubin@gmail.com>
+Date:   Thu May 12 19:40:45 2016 -0500
+
+    Merge remote-tracking branch 'refs/remotes/origin/patch-3'
+
+[33mcommit ccd389df63e75b852d6766e785758f04ea1a7cf2[m
+Author: Austin St. Aubin <AustinSaintAubin@gmail.com>
+Date:   Thu May 12 19:31:57 2016 -0500
+
+    ... really fix config...
+
+[33mcommit e52a07d9d60c4e11b32c22b26d59d0cc85189381[m
+Author: Austin St. Aubin <AustinSaintAubin@gmail.com>
+Date:   Thu May 12 19:31:57 2016 -0500
+
+    ... really fix config...
+
+[33mcommit 17db5f8fa5843839f01a825bc941181062303060[m
+Author: Austin St. Aubin <AustinSaintAubin@gmail.com>
+Date:   Thu May 12 19:20:21 2016 -0500
+
+    Fixed config.c
+
+[33mcommit 15885e776a894f73494b8410c66e58d1433698f3[m
+Merge: d47ba28 1e14fd7
+Author: Austin St. Aubin <AustinSaintAubin@gmail.com>
+Date:   Thu May 12 19:18:50 2016 -0500
+
+    Merge remote-tracking branch 'refs/remotes/cleanflight/master'
+    
+    Conflicts:
+    	src/main/config/config.c
+
+[33mcommit ff3441d7c786f8443716deded7ad8548a8155e50[m
+Author: Martin Budden <mjbudden@gmail.com>
+Date:   Thu May 12 23:48:12 2016 +0100
+
+    Fix for DTerm scaling in pid_luxfloat ot match pid_mwrewrite.
+
+[33mcommit bed88f2f7c32b38511e2fe71f458f2caf089cc0f[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Thu May 12 21:45:59 2016 +0200
+
+    fix led animation
+
+[33mcommit 3f86b26b0821e89b4c675d2e1add4e2240119840[m
+Author: Petr Ledvina <ledvinap@gmail.com>
+Date:   Tue May 10 15:48:14 2016 +0200
+
+    Workaboung VCP problem with gcc 5.3
+
+[33mcommit 1e14fd70d6cb497cf7a1cf02a853eb4b1d716227[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Thu May 12 01:14:50 2016 +0200
+
+    fix signed/unsigned warning.
+    
+    array lengths should never be negative so it make sense to use unsigned
+    here.
+
+[33mcommit dbf805703e6e460a67800bb16a4ba8d850e1712b[m
+Merge: 3ef2be9 7a710e0
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Thu May 12 01:01:17 2016 +0200
+
+    Merge pull request #2110 from cleanflight/spracingf3mini-parallel-pwm
+    
+    SPRACINGF3MINI - Add 5 channel parallel PWM receiver support
+
+[33mcommit 7a710e0bf6dbf07c3eb78cb7cd578d59745f137b[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Sat May 7 14:19:54 2016 +0200
+
+    SPRACINGF3MINI - Update documentation and pinouts for Parallel PWM
+    receiver support.
+
+[33mcommit b73a9bfee536f21ed01bed2f58e35bf0b66544f2[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Sat May 7 12:32:05 2016 +0200
+
+    SPRACINGF3MINI - Add 5 channel parallel PWM receiver support via MOTOR 6-8 for RC CH 1-4 and PPM for AUX1.
+
+[33mcommit 3ef2be9eecae388e3f799479d81f95db4bdb7b91[m
+Merge: f57836e 7ec153e
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Thu May 12 00:50:41 2016 +0200
+
+    Merge pull request #2101 from gaelj/LED-Show-GPS-3D-fix-status
+    
+    LEDs: GPS fix, Sat count, RSSI & Flash
+
+[33mcommit 7ec153ed9b7321a6317548d998158231f3a43e64[m
+Author: gael <gaeljames@gmail.com>
+Date:   Wed May 11 20:59:16 2016 +0200
+
+    Disable GPS leds on CC3D (size issue) + refactor ok into result
+
+[33mcommit bfe7a9ec1e39e4c8eecf613fd732d952e9eb97cf[m
+Author: gael <gaeljames@gmail.com>
+Date:   Wed May 11 20:54:53 2016 +0200
+
+    Revert "tentative: remove LED function rssi"
+    
+    This reverts commit b9bbc6154b55c580c58574b83cecf8150d9ea89e.
+
+[33mcommit b4729ece31c842bbfcce3a009880d5fbd6d1b2d5[m
+Author: gael <gaeljames@gmail.com>
+Date:   Wed May 11 20:54:40 2016 +0200
+
+    Revert "tentative: deeper removal of rssi"
+    
+    This reverts commit 2b9f2ed8416d9a60dd1a12a65587a14c3321aa22.
+
+[33mcommit 2acf79bc6ec021abd6160d97481fa481db4414f2[m
+Author: gael <gaeljames@gmail.com>
+Date:   Wed May 11 20:54:30 2016 +0200
+
+    Revert "bugfix"
+    
+    This reverts commit 7249cf7be77b345a6fe59739c2c5b465602fe84b.
+
+[33mcommit 7249cf7be77b345a6fe59739c2c5b465602fe84b[m
+Author: gael <gaeljames@gmail.com>
+Date:   Wed May 11 20:41:13 2016 +0200
+
+    bugfix
+
+[33mcommit 2b9f2ed8416d9a60dd1a12a65587a14c3321aa22[m
+Author: gael <gaeljames@gmail.com>
+Date:   Wed May 11 20:28:03 2016 +0200
+
+    tentative: deeper removal of rssi
+
+[33mcommit b9bbc6154b55c580c58574b83cecf8150d9ea89e[m
+Author: gael <gaeljames@gmail.com>
+Date:   Wed May 11 20:12:58 2016 +0200
+
+    tentative: remove LED function rssi
+
+[33mcommit add5de8cc4e526ef95684abaf2240d697d1a1a4c[m
+Author: gael <gaeljames@gmail.com>
+Date:   Wed May 11 19:59:11 2016 +0200
+
+    uint8_t back to int (size reduction for CC3D)
+    
+    + rename variable ok to result in parseColor()
+
+[33mcommit e128664a2e9cf312ff040f044b578c89d774ee1e[m
+Author: gael <gaeljames@gmail.com>
+Date:   Wed May 11 18:39:48 2016 +0200
+
+    Fix missing line
+
+[33mcommit 39137226ab022820ebd26b513fdb374cbce40560[m
+Author: gael <gaeljames@gmail.com>
+Date:   Wed May 11 18:30:45 2016 +0200
+
+    Fix doc & flash size for some targets
+
+[33mcommit 6a662720029c3d870ff862333da25131cb1c58af[m
+Author: gael <gaeljames@gmail.com>
+Date:   Wed May 11 18:16:22 2016 +0200
+
+    Fix unit tests
+
+[33mcommit b257e30d4463b21ca18cb459205b9ed3f3fd0597[m
+Merge: 73f28aa f57836e
+Author: gael <gaeljames@gmail.com>
+Date:   Tue May 10 23:22:01 2016 +0200
+
+    Merge remote-tracking branch 'remotes/cleanflight/master' into LED-Show-GPS-3D-fix-status
+
+[33mcommit 73f28aae0c6de39cc702a0931e896485e9f998e4[m
+Author: gael <gaeljames@gmail.com>
+Date:   Tue May 10 23:21:04 2016 +0200
+
+    Missing reference in unit tests
+
+[33mcommit ac78d1e56a57317bed7142ee6bf984c5aea8346b[m
+Author: gael <gaeljames@gmail.com>
+Date:   Tue May 10 23:15:13 2016 +0200
+
+    Turn on LEDs on first blink
+
+[33mcommit f57836e271640a732bba9b551f3721441912c66d[m
+Merge: 1f62059 ec10b65
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Tue May 10 22:49:13 2016 +0200
+
+    Merge branch 'MJ666-AlienFlightF3_V2'
+
+[33mcommit ec10b65cb1d59630fddcce1c30dc24057420e88f[m
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Tue May 10 22:47:38 2016 +0200
+
+    fix unit tests.
+
+[33mcommit aee190e3b7b3bd2d0d86bbbc2432ef1f5bbffdcb[m
+Author: gael <gaeljames@gmail.com>
+Date:   Tue May 10 22:47:02 2016 +0200
+
+    Fix one too many blinks
+
+[33mcommit cb3bf7f476a8513dbab6668345a349e56e6642d3[m
+Merge: 1f62059 84bb677
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Tue May 10 22:44:31 2016 +0200
+
+    Merge branch 'AlienFlightF3_V2' of https://github.com/MJ666/cleanflight into MJ666-AlienFlightF3_V2
+
+[33mcommit f5e7bef630bb2bf5e00bc0da6969e76e026b768e[m
+Author: gael <gaeljames@gmail.com>
+Date:   Tue May 10 22:33:35 2016 +0200
+
+    Explicitly check gpsPauseCounter is > 0
+
+[33mcommit 51a7236fde4cb8d9c4907b4429b10f589d02edd2[m
+Author: gael <gaeljames@gmail.com>
+Date:   Tue May 10 22:18:50 2016 +0200
+
+    Do not increment flash counter during pauses
+
+[33mcommit f3925ccd1908a9fada3729896eca30edafbeff21[m
+Author: gael <gaeljames@gmail.com>
+Date:   Tue May 10 21:52:11 2016 +0200
+
+    Fix blinking bug
+
+[33mcommit 1f620592c361adc05d4e3cd93443f511dc95a866[m
+Merge: d16ac9e e454c38
+Author: Dominic Clifton <me@dominicclifton.name>
+Date:   Tue May 10 21:46:42 2016 +0200
+
+    Merge pull request #2116 from martinbudden/tidy_gyro
+    
+    Cleanup of gyro_sync.c
+
+[33mcommit a402a8fa2881cc503571c2d63e422a5dbd2d26a7[m
+Author: gael <gaeljames@gmail.com>
+Date:   Tue May 10 21:29:54 2016 +0200
+
+    Customize GPS & blink-bckgnd colors via mode_color
+
+[33mcommit 23df6e4fd346ad5799642a3ff06e7bb08a5b1c9b[m
+Author: gael <gaeljames@gmail.com>
+Date:   Tue May 10 20:56:43 2016 +0200
+
+    Fix broken blinking
+
+[33mcommit 7b41a65f14cdccf070e5d6ec122d48d5a478fb18[m
+Author: gael <gaeljames@gmail.com>
+Date:   Tue May 10 20:48:39 2016 +0200
+
+    Fix Doc
+
+[33mcommit d16ac9ea29c7afdf3b52cc400beb6d110201ba93[m
+Merge: 613a10f 048ce4a
+Author: Dominic Clifton <dominic.clifton@cleanflight.com>
+Date:   Tue May 10 20:36:59 2016 +0200
+
+    Merge branch 'martinbudden-tidy_acc_1g'
+
+[33mcommit 3cdee9e7129d77fca87b8204b2aae1635396077c[m
+Author: gael <gaeljames@gmail.com>
+Date:   Tue May 10 20:19:11 2016 +0200
+
+    Bugfixes after merge
+
+[33mcommit 14b1831e6a3ecca64dc6f1927d427821667f8cef[m
+Author: gael <gaeljames@gmail.com>
+Date:   Tue May 10 20:01:00 2016 +0200
+
+    Document updates were lost
+
+[33mcommit 72d8d66b9d6165d89138eed982a90ad04e45bb68[m
+Merge: dcbd3a1 7ff03f5
+Author: gael <gaeljames@gmail.com>
+Date:   Tue May 10 19:28:47 2016 +0200
+
+    Merge commit '7ff03f55fc3c99ba5511cd607517e4318119016a' into LED-Show-GPS-3D-fix-status
+    
+    # Conflicts:
+    #	src/main/io/ledstrip.c
+
+[33mcommit dcbd3a19814408d5e10c4a608519f773e5282a24[m
+Merge: 2e33f14 613a10f
+Author: gael <gaeljames@gmail.com>
+Date:   Tue May 10 19:14:26 2016 +0200
+
+    Merge remote-tracking branch 'remotes/cleanflight/master' into LED-Show-GPS-3D-fix-status
+    
+    # Conflicts:
+    #	docs/LedStrip.md
+    #	src/main/io/ledstrip.c
+    #	src/main/io/ledstrip.h
+    #	src/main/io/serial_cli.c
+    #	src/main/io/serial_msp.c
+    #	src/test/unit/serial_msp_unittest.cc
+
+[33mcommit 84bb67761f936fca2e4e5a9bfe1f9f8f97473c41[m
+Author: Michael Jakob <michael.p.jakob@web.de>
+Date:   Sun Nov 22 00:09:36 2015 +0100
+
+    AlienFlightF3 V2 support(MPU6500/9250 via SPI)
+    Enable Gyro interrupt for all AlienFlight F3 board revisions
+    AK8963 mag implementation (part of MPU9250)
+    Update LED driver for alternative LED set (AlienFlightF3 V2)
+    Add SPI port 3 for STM32F303 targets
+    reintroduce SPI driver timeout to avoid blockage
+    AlienFlight/AlienWii documentation update
+    Rename AlienWii to AlienFlight
+    PPM receiver fix
+    AK8936 SPI driver update
+    Update recomended by @martinbudden
