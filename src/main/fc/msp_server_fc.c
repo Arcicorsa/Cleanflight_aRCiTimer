@@ -1260,7 +1260,7 @@ int mspServerCommandHandler(mspPacket_t *cmd, mspPacket_t *reply)
             if (len != sizeof(transponderConfig()->data))
                 return -1;
             sbufReadData(src, transponderConfig()->data, sizeof(transponderConfig()->data));
-            transponderUpdateData(transponderConfig()->data);
+            transponderUpdateData(transponderConfig()->data, transponderTipe()->Tipe); //
             break;
 #endif
 

@@ -41,15 +41,15 @@
 #define BIT_TOGGLE_1 78 // (156 / 2) (delka mezery)
 #define BIT_TOGGLE_0 0               
 
-void transponderIrInit(void);
+void transponderIrInit(const uint8_t* transponderTipe); //
 void transponderIrDisable(void);
 
-void transponderIrHardwareInit(void);
-void transponderIrDMAEnable(void);
+void transponderIrHardwareInit(); //
+void transponderIrDMAEnable();  //
 
 void transponderIrWaitForTransmitComplete(void);
 
-void transponderIrUpdateData(const uint8_t* transponderData);
+void transponderIrUpdateData(const uint8_t* transponderData, const uint8_t* rtansponderTipe);
 void transponderIrTransmit(void);
 
 bool isTransponderIrReady(void);
@@ -58,4 +58,4 @@ bool isTransponderIrReady(void);
 extern uint8_t transponderIrDMABuffer1[TRANSPONDER_DMA_BUFFER_SIZE_ARCITIMER];
 extern uint8_t transponderIrDMABuffer[TRANSPONDER_DMA_BUFFER_SIZE];
 extern volatile uint8_t transponderIrDataTransferInProgress;
-extern uint8_t transponder_tipe;
+
