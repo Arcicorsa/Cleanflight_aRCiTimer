@@ -138,5 +138,5 @@ void transponderTransmitOnce(void)
     if (!transponderInitialised) {
         return;
     }
-	transponderIrTransmit();
+	transponderIrTransmit(transponderTipe);
 }
