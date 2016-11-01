@@ -54,11 +54,11 @@ static bool transponderRepeat = false;
 PG_REGISTER_WITH_RESET_TEMPLATE(transponderTipe_t, transponderTipe, PG_TRANSPONDERTIPE, 0);
 PG_REGISTER_WITH_RESET_TEMPLATE(transponderConfig_t, transponderConfig, PG_TRANSPONDER_CONFIG, 0);
 PG_RESET_TEMPLATE(transponderConfig_t, transponderConfig,
-    .data =  { 0x1F, 0xFC, 0x8F, 0x3, 0xF0, 0x1, 0xF8, 0x0, 0x0 }, // Note, this is NOT a valid transponder code, it's just for testing production hardware
+    .data =  { 0x12, 0x34, 0x56, 0x78, 0x9A, 0xBC, 0x0, 0x0, 0x0 }, // Note, this is NOT a valid transponder code, it's just for testing production hardware
 );
 
 PG_RESET_TEMPLATE(transponderTipe_t, transponderTipe,
-	.Tipe = { 0x1 },
+	.Tipe = { 0x0 },
 );
 
 // timers
@@ -67,7 +67,7 @@ static uint32_t nextUpdateAt = 0;
 #define JITTER_DURATION_COUNT (sizeof(jitterDurations) / sizeof(uint8_t))
 static uint8_t jitterDurations[] = {0,9,4,8,3,9,6,7,1,6,9,7,8,2,6};
 
-void updateTransponder(void)
+void updateTransponder(const uint8_t* transponderTipe)
 {
     static uint32_t jitterIndex = 0;
 
@@ -97,7 +97,7 @@ void updateTransponder(void)
     }
 #endif
 
-    transponderIrTransmit();
+    transponderIrTransmit(transponderTipe);
 }
 
 void transponderInit(uint8_t* transponderData, uint8_t* transponderTipe) //void transponderInit(uint8_t* transponderData, uint8_t* transponderTipe)
@@ -138,5 +138,5 @@ void transponderTransmitOnce(void)
     if (!transponderInitialised) {
         return;
     }
-    transponderIrTransmit();
+	transponderIrTransmit();
 }

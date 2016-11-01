@@ -32,7 +32,7 @@ void transponderInit(uint8_t* transponderCode, uint8_t* transponderTipe); //
 
 void transponderEnable(void);
 void transponderDisable(void);
-void updateTransponder(void);
+void updateTransponder(uint8_t* transponderCode);
 void transponderUpdateData(uint8_t* transponderData, uint8_t* transponderTipe); //
 void transponderTransmitOnce(void);
 void transponderStartRepeating(void);

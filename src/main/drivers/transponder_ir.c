@@ -57,17 +57,19 @@ void transponderDMAHandler(dmaChannel_t* descriptor, dmaCallbackHandler_t* handl
 
 void transponderIrInit(const uint8_t* transponderTipe)
 {
-	if (transponderTipe[1] == 0x0) {
+	uint8_t transponderTipeLocal = *transponderTipe;
+	
+	if (transponderTipeLocal == 0x0) {
 		memset(&transponderIrDMABuffer1, 0, TRANSPONDER_DMA_BUFFER_SIZE_ARCITIMER);
 	}
-	else if(transponderTipe[1] == 0x1) {
+	else if(transponderTipeLocal == 0x1) {
 		memset(&transponderIrDMABuffer, 0, TRANSPONDER_DMA_BUFFER_SIZE);
 
 	}
 	
     dmaHandlerInit(&transponderDMACallbacRec, transponderDMAHandler);
     dmaSetHandler(TRANSPONDER_DMA_HANDLER_IDENTIFER, &transponderDMACallbacRec, NVIC_PRIO_TRANSPONDER_DMA);
-	transponderIrHardwareInit(); ////
+	transponderIrHardwareInit(transponderTipe); ////
 }
 
 bool isTransponderIrReady(void)
@@ -80,11 +82,13 @@ static uint16_t dmaBufferOffset;
 
 void updateTransponderDMABuffer(const uint8_t* transponderData, const uint8_t* transponderTipe)
 {
-    uint8_t byteIndex;
+	uint8_t transponderTipeLocal = *transponderTipe;
+	
+	uint8_t byteIndex;
     uint8_t bitIndex;
     uint8_t toggleIndex;
 
-	if (transponderTipe[1] == 0x0) {
+	if (transponderTipeLocal == 0x0) {
 		
 
 		for (byteIndex = 0; byteIndex < TRANSPONDER_DATA_LENGTH_ARCITIMER; byteIndex++) {
@@ -103,7 +107,7 @@ void updateTransponderDMABuffer(const uint8_t* transponderData, const uint8_t* t
 			}
 		}
 	}
-	else if(transponderTipe[1] == 0x1) {
+	else if(transponderTipeLocal == 0x1) {
 		
 
 		for (byteIndex = 0; byteIndex < TRANSPONDER_DATA_LENGTH; byteIndex++) {
@@ -159,12 +163,12 @@ void transponderIrUpdateData(const uint8_t* transponderData, const uint8_t* tran
 }
 
 
-void transponderIrTransmit(void)
+void transponderIrTransmit(const uint8_t* transponderTipe) //
 {
     transponderIrWaitForTransmitComplete();
 
     dmaBufferOffset = 0;
 
     transponderIrDataTransferInProgress = 1;
-	transponderIrDMAEnable(); //
+	transponderIrDMAEnable(transponderTipe); //
 }
