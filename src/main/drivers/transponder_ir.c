@@ -42,7 +42,6 @@ volatile uint8_t transponderIrDataTransferInProgress = 0;
 
 static dmaCallbackHandler_t transponderDMACallbacRec;
 
-//uint8_t transponderTipe;
 
 void transponderDMAHandler(dmaChannel_t* descriptor, dmaCallbackHandler_t* handler)
 {
@@ -69,7 +68,7 @@ void transponderIrInit(const uint8_t* transponderTipe)
 	
     dmaHandlerInit(&transponderDMACallbacRec, transponderDMAHandler);
     dmaSetHandler(TRANSPONDER_DMA_HANDLER_IDENTIFER, &transponderDMACallbacRec, NVIC_PRIO_TRANSPONDER_DMA);
-	transponderIrHardwareInit(transponderTipe); ////
+	transponderIrHardwareInit(transponderTipe); 
 }
 
 bool isTransponderIrReady(void)
@@ -158,17 +157,15 @@ void transponderIrUpdateData(const uint8_t* transponderData, const uint8_t* tran
     transponderIrWaitForTransmitComplete();
 
     updateTransponderDMABuffer(transponderData, transponderTipe);
-	
-	//transponderTipe(); ///
 }
 
 
-void transponderIrTransmit(const uint8_t* transponderTipe) //
+void transponderIrTransmit(const uint8_t* transponderTipe) 
 {
     transponderIrWaitForTransmitComplete();
 
     dmaBufferOffset = 0;
 
     transponderIrDataTransferInProgress = 1;
-	transponderIrDMAEnable(transponderTipe); //
+	transponderIrDMAEnable(transponderTipe); 
 }

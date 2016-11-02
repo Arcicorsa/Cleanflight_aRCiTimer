@@ -1053,10 +1053,10 @@ void taskLedStrip(void)
 #endif
 
 #ifdef TRANSPONDER
-void taskTransponder(const uint8_t* transponderTipe)
+void taskTransponder(void)
 {
     if (feature(FEATURE_TRANSPONDER)) {
-        updateTransponder(transponderTipe);
+	    updateTransponder(transponderTipe()->Tipe);
     }
 }
 #endif

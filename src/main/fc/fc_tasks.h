@@ -83,4 +83,4 @@ void taskCalculateAltitude(void);
 void taskUpdateDisplay(void);
 void taskTelemetry(void);
 void taskLedStrip(void);
-void taskTransponder(const uint8_t* transponderTipe);
+void taskTransponder(void);

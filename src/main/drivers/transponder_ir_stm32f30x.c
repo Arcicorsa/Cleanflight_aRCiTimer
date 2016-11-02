@@ -70,7 +70,7 @@ void transponderIrHardwareInit(const uint8_t* transponderTipe)
 	TIM_TimeBaseStructInit(&TIM_TimeBaseStructure);
 	TIM_TimeBaseStructure.TIM_Period = 156;
 	if (transponderTipeLocal == 0x0) {
-		TIM_TimeBaseStructure.TIM_Prescaler = 11; //delicka pro arcitimer 11
+		TIM_TimeBaseStructure.TIM_Prescaler = 11; 
 	}
 	else if(transponderTipeLocal == 0x1) {
 		TIM_TimeBaseStructure.TIM_Prescaler = 0;
@@ -84,7 +84,7 @@ void transponderIrHardwareInit(const uint8_t* transponderTipe)
 	TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;
 	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
 	TIM_OCInitStructure.TIM_Pulse = 0;
-#ifdef TRANSPONDER_INVERTED                                                      ///////////////POSLEDNI MOZNOST????
+#ifdef TRANSPONDER_INVERTED                                                      
 	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_Low;
 #else
 	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;
@@ -105,11 +105,11 @@ void transponderIrHardwareInit(const uint8_t* transponderTipe)
 	DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)&TRANSPONDER_TIMER->CCR1;
 	
 	if (transponderTipeLocal == 0x0) {
-		DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)transponderIrDMABuffer1;  //zmena
-		DMA_InitStructure.DMA_BufferSize = TRANSPONDER_DMA_BUFFER_SIZE_ARCITIMER;  //zmena
+		DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)transponderIrDMABuffer1;  
+		DMA_InitStructure.DMA_BufferSize = TRANSPONDER_DMA_BUFFER_SIZE_ARCITIMER;  
 	}
 	else if(transponderTipeLocal == 0x1) {
-		DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)transponderIrDMABuffer;  //zmena
+		DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)transponderIrDMABuffer;  
 		DMA_InitStructure.DMA_BufferSize = TRANSPONDER_DMA_BUFFER_SIZE;
 	}
 	
@@ -135,10 +135,10 @@ void transponderIrDMAEnable(const uint8_t* transponderTipe)
 	uint8_t transponderTipeLocal = *transponderTipe;
 	
 	if (transponderTipeLocal == 0x0) {
-		DMA_SetCurrDataCounter(TRANSPONDER_DMA_CHANNEL, TRANSPONDER_DMA_BUFFER_SIZE_ARCITIMER);  // load number of bytes to be transferred
+		DMA_SetCurrDataCounter(TRANSPONDER_DMA_CHANNEL, TRANSPONDER_DMA_BUFFER_SIZE_ARCITIMER);  
 	}
 	else if(transponderTipeLocal == 0x1) {
-		DMA_SetCurrDataCounter(TRANSPONDER_DMA_CHANNEL, TRANSPONDER_DMA_BUFFER_SIZE);
+		DMA_SetCurrDataCounter(TRANSPONDER_DMA_CHANNEL, TRANSPONDER_DMA_BUFFER_SIZE);  // load number of bytes to be transferred
 	}
 	TIM_SetCounter(TRANSPONDER_TIMER, 0);
 	TIM_Cmd(TRANSPONDER_TIMER, ENABLE);

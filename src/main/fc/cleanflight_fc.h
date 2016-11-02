@@ -26,6 +26,6 @@ void handleInflightCalibrationStickPosition();
 void mwDisarm(void);
 void mwArm(void);
 
-void taskTransponder(const uint8_t* transponderTipe);
+void taskTransponder(void);
 
 bool isCalibrating(void);

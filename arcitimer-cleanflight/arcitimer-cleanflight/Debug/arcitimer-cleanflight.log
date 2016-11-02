@@ -42,14 +42,6 @@
   %% asyncfatfs.c
   %% fat_standard.c
   %% transponder_ir.c
-  ./src/main/io/transponder_ir.c: In function 'transponderTransmitOnce':
-C:\dev\aRCiTimer-Cleanflight\.\src\main\io\transponder_ir.c(141,24): warning : passing argument 1 of 'transponderIrTransmit' from incompatible pointer type [-Wincompatible-pointer-types]
-    transponderIrTransmit(transponderTipe);
-                          ^
-  In file included from ./src/main/io/transponder_ir.c:31:0:
-  C:\dev\aRCiTimer-Cleanflight\.\src\main\drivers\transponder_ir.h(53,6): note:  expected 'const uint8_t * {aka const unsigned char *}' but argument is of type 'transponderTipe_t * (*)(void) {aka struct transponderTipe_s * (*)(void)}'
-   void transponderIrTransmit(const uint8_t* transponderTipe);
-        ^
   %% gtune.c
   %% navigation.c
   %% gps_conversion.c
@@ -74,10 +66,6 @@ C:\dev\aRCiTimer-Cleanflight\.\src\main\io\transponder_ir.c(141,24): warning : p
   %% fc_debug.c
   %% cleanflight_fc.c
   %% fc_tasks.c
-C:\dev\aRCiTimer-Cleanflight\.\src\main\fc\fc_tasks.c(155,21): warning : initialization from incompatible pointer type [-Wincompatible-pointer-types]
-           .taskFunc = taskTransponder,
-                       ^
-  C:\dev\aRCiTimer-Cleanflight\.\src\main\fc\fc_tasks.c(155,21): note:  (near initialization for 'cfTasks[17].taskFunc')
   %% rate_profile.c
   %% rc_adjustments.c
   %% rc_controls.c

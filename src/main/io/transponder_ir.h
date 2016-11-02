@@ -28,12 +28,12 @@ typedef struct transponderTipe_s {
 PG_DECLARE(transponderConfig_t, transponderConfig);
 PG_DECLARE(transponderTipe_t, transponderTipe);
 
-void transponderInit(uint8_t* transponderCode, uint8_t* transponderTipe); //
+void transponderInit(uint8_t* transponderCode, uint8_t* transponderTipe); 
 
 void transponderEnable(void);
 void transponderDisable(void);
 void updateTransponder(const uint8_t* transponderCode);
-void transponderUpdateData(uint8_t* transponderData, uint8_t* transponderTipe); //
-void transponderTransmitOnce(void);
+void transponderUpdateData(uint8_t* transponderData, uint8_t* transponderTipe); 
+void transponderTransmitOnce(const uint8_t* transponderTipe);
 void transponderStartRepeating(void);
 void transponderStopRepeating(void);
