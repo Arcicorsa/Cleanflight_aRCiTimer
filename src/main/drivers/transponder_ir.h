@@ -38,16 +38,16 @@
 #define BIT_TOGGLE_1 78 
 #define BIT_TOGGLE_0 0               
 
-void transponderIrInit(const uint8_t* transponderTipe); 
+void transponderIrInit(const uint8_t* transponderType); 
 void transponderIrDisable(void);
 
-void transponderIrHardwareInit(const uint8_t* transponderTipe); 
-void transponderIrDMAEnable(const uint8_t* transponderTipe);  
+void transponderIrHardwareInit(const uint8_t* transponderType); 
+void transponderIrDMAEnable(const uint8_t* transponderType);  
 
 void transponderIrWaitForTransmitComplete(void);
 
-void transponderIrUpdateData(const uint8_t* transponderData, const uint8_t* transponderTipe);
-void transponderIrTransmit(const uint8_t* transponderTipe);
+void transponderIrUpdateData(const uint8_t* transponderData, const uint8_t* transponderType);
+void transponderIrTransmit(const uint8_t* transponderType);
 
 bool isTransponderIrReady(void);
 

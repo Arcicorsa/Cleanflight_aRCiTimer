@@ -988,6 +988,15 @@ int mspServerCommandHandler(mspPacket_t *cmd, mspPacket_t *reply)
             sbufWriteU8(dst, 0); // Transponder not supported
 #endif
             break;
+	    
+    case MSP_TRANSPONDER_TYPE:
+//#ifdef TRANSPONDER
+//	    sbufWriteU8(dst, 1); //Transponder supported
+	    sbufWriteData(dst, transponderType()->Type, sizeof(transponderType()->Type));  ///////////////////
+//#else
+	    //sbufWriteU8(dst, 0); // Transponder not supported
+//#endif
+	    break;
 
         case MSP_BF_BUILD_INFO:
             sbufWriteData(dst, buildDate, 11); // MMM DD YYYY as ascii, MMM = Jan/Feb... etc
@@ -1260,8 +1269,16 @@ int mspServerCommandHandler(mspPacket_t *cmd, mspPacket_t *reply)
             if (len != sizeof(transponderConfig()->data))
                 return -1;
             sbufReadData(src, transponderConfig()->data, sizeof(transponderConfig()->data));
-            transponderUpdateData(transponderConfig()->data, transponderTipe()->Tipe); //
+	    transponderUpdateData(transponderConfig()->data, transponderType()->Type);                                       // transponderType()->Type); //
             break;
+	    
+		case MSP_SET_TRANSPONDER_TYPE:
+			if (len != sizeof(transponderType()->Type))
+				return -1;
+			sbufReadData(src, transponderType()->Type, sizeof(transponderType()->Type));    //////////////////////////////
+	    transponderUpdateData(transponderConfig()->data, transponderType()->Type);                                // transponderType()->Type); //
+			break;
+	    
 #endif
 
 #ifdef USE_FLASHFS

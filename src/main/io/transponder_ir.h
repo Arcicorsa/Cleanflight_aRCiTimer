@@ -21,19 +21,20 @@ typedef struct transponderConfig_s {
     uint8_t data[9];
 } transponderConfig_t;
 
-typedef struct transponderTipe_s {
-	uint8_t Tipe[1];
-} transponderTipe_t;
+typedef struct transponderType_s {
+	uint8_t Type[1];
+} transponderType_t;
 
 PG_DECLARE(transponderConfig_t, transponderConfig);
-PG_DECLARE(transponderTipe_t, transponderTipe);
+PG_DECLARE(transponderType_t, transponderType);
 
-void transponderInit(uint8_t* transponderCode, uint8_t* transponderTipe); 
+void transponderInit(uint8_t* transponderCode, uint8_t* transponderType); 
 
 void transponderEnable(void);
 void transponderDisable(void);
 void updateTransponder(const uint8_t* transponderCode);
-void transponderUpdateData(uint8_t* transponderData, uint8_t* transponderTipe); 
-void transponderTransmitOnce(const uint8_t* transponderTipe);
+void transponderUpdateData(uint8_t* transponderData, uint8_t* transponderType);
+//void transponderUpdateType(uint8_t* transponderTipe);
+void transponderTransmitOnce(const uint8_t* transponderType);
 void transponderStartRepeating(void);
 void transponderStopRepeating(void);

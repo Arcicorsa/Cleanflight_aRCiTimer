@@ -51,14 +51,15 @@ static bool transponderRepeat = false;
 	// ID8 0xFF, 0x3, 0xF0, 0x1, 0xF8, 0xE0, 0xC1, 0xFF, 0x1           // 00FC0FFE071F3E00FE
 	// ID9 0x1F, 0x7C, 0x40, 0xF, 0xF0, 0x61, 0xC7, 0x3F, 0x0          // E083BFF00F9E38C0FF
 
-PG_REGISTER_WITH_RESET_TEMPLATE(transponderTipe_t, transponderTipe, PG_TRANSPONDERTIPE, 0);
+
 PG_REGISTER_WITH_RESET_TEMPLATE(transponderConfig_t, transponderConfig, PG_TRANSPONDER_CONFIG, 0);
 PG_RESET_TEMPLATE(transponderConfig_t, transponderConfig,
-    .data =  { 0x12, 0x34, 0x56, 0x78, 0x9A, 0xBC, 0x0, 0x0, 0x0 }, // Note, this is NOT a valid transponder code, it's just for testing production hardware
+    .data =  { 0x1F, 0xFC, 0x8F, 0x3, 0xF0, 0x1, 0xF8, 0x1F, 0x0 }, // Note, this is NOT a valid transponder code, it's just for testing production hardware
 );
 
-PG_RESET_TEMPLATE(transponderTipe_t, transponderTipe, 
-	.Tipe = { 0x1 },  
+PG_REGISTER_WITH_RESET_TEMPLATE(transponderType_t, transponderType, PG_TRANSPONDERTYPE, 0);
+PG_RESET_TEMPLATE(transponderType_t, transponderType, 
+	.Type = { 0x0 },  
 );
 
 // timers
@@ -67,7 +68,7 @@ static uint32_t nextUpdateAt = 0;
 #define JITTER_DURATION_COUNT (sizeof(jitterDurations) / sizeof(uint8_t))
 static uint8_t jitterDurations[] = {0,9,4,8,3,9,6,7,1,6,9,7,8,2,6};
 
-void updateTransponder(const uint8_t* transponderTipe) 
+void updateTransponder(const uint8_t* transponderType) 
 {
     static uint32_t jitterIndex = 0;
 
@@ -97,14 +98,14 @@ void updateTransponder(const uint8_t* transponderTipe)
     }
 #endif
 
-	transponderIrTransmit(transponderTipe); 
+	transponderIrTransmit(transponderType); 
 }
 
-void transponderInit(uint8_t* transponderData, uint8_t* transponderTipe) 
+void transponderInit(uint8_t* transponderData, uint8_t* transponderType) 
 {
     transponderInitialised = false;
-    transponderIrInit(transponderTipe); 
-    transponderIrUpdateData(transponderData, transponderTipe); 
+    transponderIrInit(transponderType); 
+    transponderIrUpdateData(transponderData, transponderType); 
 }
 
 void transponderEnable(void)
@@ -127,16 +128,16 @@ void transponderStartRepeating(void)
     transponderRepeat = true;
 }
 
-void transponderUpdateData(uint8_t* transponderData, uint8_t* transponderTipe) 
+void transponderUpdateData(uint8_t* transponderData, uint8_t* transponderType) 
 {
-    transponderIrUpdateData(transponderData, transponderTipe); 
+    transponderIrUpdateData(transponderData, transponderType); 
 }
 
-void transponderTransmitOnce(const uint8_t* transponderTipe)
+void transponderTransmitOnce(const uint8_t* transponderType)
 {
 
     if (!transponderInitialised) {
         return;
     }
-	transponderIrTransmit(transponderTipe); 
+	transponderIrTransmit(transponderType); 
 }

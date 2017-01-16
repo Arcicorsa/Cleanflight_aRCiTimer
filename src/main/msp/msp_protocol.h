@@ -185,6 +185,8 @@
 
 #define MSP_TRANSPONDER_CONFIG          82 //out message         Get transponder settings
 #define MSP_SET_TRANSPONDER_CONFIG      83 //in message          Set transponder settings
+#define MSP_TRANSPONDER_TYPE            85
+#define MSP_SET_TRANSPONDER_TYPE        84
 
 // DEPRECATED (single responsibility principle violation in betaflight) - for reference only.
 //#define MSP_OSD_CONFIG                  84 //out message         Get osd settings - betaflight
